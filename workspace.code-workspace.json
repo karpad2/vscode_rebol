@@ -1,0 +1,30 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"[REBOL]": {
+			"editor.semanticHighlighting.enabled": true,
+            "[sc]": {
+                "files.encoding": "windows1252"
+              },
+			"files.autoGuessEncoding": true,
+            "files.trimTrailingWhitespace": true,
+			"editor.snippetSuggestions": "bottom",
+			"editor.renderIndentGuides": false,
+			"editor.formatOnType": true,
+			"editor.rulers": [
+				6,
+				7,
+				11,
+				72
+			],
+			"editor.detectIndentation": false,
+			"editor.useTabStops": false
+            
+		
+		}
+	}
+}

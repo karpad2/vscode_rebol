@@ -1,0 +1,13 @@
+{
+    "iconDefinitions": {
+        "_rbl_file": {
+            "iconPath": "./icon.png"
+        }
+    },
+    "fileExtensions": {
+        "sc": "_rbl_file"
+    },
+    "fileNames": {
+        ".sc": "_rbl_file"
+    }
+}

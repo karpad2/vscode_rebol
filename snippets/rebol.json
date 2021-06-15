@@ -1,0 +1,188 @@
+{
+    "mysqlsimplecommand": {
+		"prefix": "sql",
+		"body": [
+		"mysql_cmd",
+        "[",
+        "\"\t$0\"",
+        "]"
+		],
+		"description": "MySQL command"
+	},
+    "mysqltarcmd": {
+		"prefix": "sql tar",
+		"body": [
+		"mysql_cmd compose",
+        "[",
+        "\"\t$0\"",
+        "]",
+        "tar: get_rekordset copy db"
+		],
+		"description": "MySQL tar command"
+	},
+    
+    "mysqlrekcmd": {
+		"prefix": "sql rek",
+		"body": [
+		"mysql_cmd compose",
+        "[",
+        "\"\t$0\"",
+        "]",
+        "rek: get_rekord first db"
+		],
+		"description": "MySQL rek command"
+	},
+    "excelcmd": {
+		"prefix": "excelcmd",
+		"body": [
+			"excel_com compose ",
+            "[",
+            "column \t$0",
+			"format \"f:0\" align \"h:Center\" \"v:Center\" \"w:1\" ; header",
+			"interior \"c:#E6E6E6\" \"p:Solid\"",
+			"\t$4//${0:TODO}: handle exception",
+            ";",
+            "row  \"h:30\" interior 0 align \"h:Center\" font \"b:1\"",
+            "cell (\"Cell1\")",
+			"]"
+		],
+		"description": "excel_com compose"
+	},
+    "if": {
+		"prefix": "if ",
+		"body": [
+            "if  \t$0",
+            "[",
+            "\t$1",
+            "]"
+		],
+		"description": "if desc"
+	},
+
+    "ifelse": {
+		"prefix": "either",
+		"body": [
+            "either \t$0",
+            "[",
+            "\t$1",
+            "]",
+            "[",
+            "\t$2",
+            "]"
+		],
+		"description": "if else"
+	},
+    "while": {
+		"prefix": "while",
+		"body": [
+            "while [ \t$0 ]",
+            "[",
+            "\t$1",
+            "]"
+		],
+		"description": "while"
+	},
+    "foreachar": {
+		"prefix": "foreach [",
+		"body": [
+            "foreach [ \t$0 ]",
+            "[",
+            "\t$1",
+            "]"
+		],
+		"description": "foreach []"
+	},
+    "foreach": {
+		"prefix": "foreach ",
+		"body": [
+            "foreach ",
+            "[",
+            "",
+            "]"
+		],
+		"description": "foreach "
+	},
+    "function":
+    {
+    "prefix": "func",
+    "body":[
+        ": func [ var[object!] /local  ]",
+        "[",
+        "\t$1",
+        "]"
+    ],
+    "description": "Function "
+    },
+    "switch-def":
+    {
+    "prefix": "switch-def",
+    "body":[
+        "switch/default \t$0",
+        "[",
+        "\t$1 [ ]",
+        "]",
+        "[",
+        "\t$2",
+        "]"
+    ],
+    "description": "switch with default"
+    },
+    "switch":
+    {
+    "prefix": "switch",
+    "body":[
+        "switch \t$0",
+        "[",
+        "\t$1 [ ]",
+        "]"
+        
+    ],
+    "description": "switch "
+    },
+    "append":
+    {
+    "prefix": "append",
+    "body":[
+        "append",
+        "[",
+        "\t$0",
+        "]"
+        
+    ],
+    "description": "Append "
+    },
+    "make-object":
+    {
+    "prefix": "make object",
+    "body":[
+        ": make object!",
+        "[",
+        "\t$0",
+        "]"
+        
+    ],
+    "description": "make object "
+    }, 
+    "make-block":
+    {
+    "prefix": "make block",
+    "body":[
+        ": make block!",
+        "[",
+        "\t$0",
+        "]"
+        
+    ],
+    "description": "make block "
+    }
+
+
+
+
+
+    
+
+
+
+}
+
