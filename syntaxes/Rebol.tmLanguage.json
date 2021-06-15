@@ -247,10 +247,7 @@
 				},
 				{
 					"include": "#string-nested-multiline"
-				},
-				{
-					"include": "#meta.embedded.inline.sql"
-				}
+				}				
 			]
 		},
 		"string-nested-multiline": {
@@ -321,11 +318,6 @@
 				}
 			]
 		},
-		"meta.embedded.inline.sql": {
-			"begin": "\"",
-			"end": "\"",
-			"name": "meta.embedded.inline.sql"
-		},
 		"string-tag-double-quoted": {
 			"begin": "\"",
 			"end": "\"",
@@ -380,9 +372,6 @@
 				},
 				{
 					"include": "#string-issue"
-				},
-				{
-					"include": "#meta.embedded.inline.sql"
 				}
 
 				

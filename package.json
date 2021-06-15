@@ -3,7 +3,7 @@
 	"name": "rebol",
 	"displayName": "Rebol",
 	"description": "Syntax Coloring, Intellisense, Snippets and more",
-	"version": "0.0.6",
+	"version": "0.1.2",
 	"publisher": "karpad2",
 	"license": "MIT License",
 	"files.encoding": "any encoding",
@@ -19,6 +19,9 @@
 	"engines": {
 		"vscode": "^1.48.0"
 	},
+	"extensionKind": [
+		"workspace"
+	  ],
 	"categories": [
 		"Programming Languages",
 		"Snippets",
@@ -27,6 +30,7 @@
 	"activationEvents": [
 		"onLanguage:rebol",
 		"onLanguage:REBOL",
+		"onLanguage:Rebol",
 		"workspaceContains:**/*.sc"
 	],
 	"main": "./out/extension.js",
@@ -54,10 +58,8 @@
 			{
 				"language": "rebol",
 				"scopeName": "source.sc",
-				"path": "./syntaxes/Rebol.tmLanguage.json",
-				"embeddedLanguages": {
-					"meta.embedded.inline.sql": "sql"
-				}
+				"path": "./syntaxes/Rebol.tmLanguage.json"
+				
 				
 		}
 		
@@ -119,6 +121,12 @@
 					"description": "Traces the communication between VS Code and the language server."
 				}
 			}
+		},
+		"configurationDefaults": {
+			"[REBOL]": {
+				"editor.semanticHighlighting.enabled": true,
+				"files.autoGuessEncoding": false
+				}
 		}
 	},
 	"scripts": {
