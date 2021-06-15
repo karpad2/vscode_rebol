@@ -1,9 +1,9 @@
 {
-	"windowscharchode": 1250,
+	
 	"name": "rebol",
 	"displayName": "Rebol",
 	"description": "Syntax Coloring, Intellisense, Snippets and more",
-	"version": "0.0.2",
+	"version": "0.0.6",
 	"publisher": "karpad2",
 	"license": "MIT License",
 	"files.encoding": "any encoding",
@@ -26,15 +26,16 @@
 	],
 	"activationEvents": [
 		"onLanguage:rebol",
-		"onLanguage:REBOL"
+		"onLanguage:REBOL",
+		"workspaceContains:**/*.sc"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"languages": [
 			{
-				"id": "Rebol",
+				"id": "rebol",
 				"aliases": [
-					"Rebol",
+					"REBOL",
 					"rebol"
 				],
 				"extensions": [
@@ -43,14 +44,23 @@
 				"configuration": "./rebol.configuration.json"
 			}
 		],
+		"snippets": [
+			{
+			  "language": "rebol",
+			  "path": "./snippets/rebol.json"
+			}
+		  ],
 		"grammars": [
 			{
 				"language": "rebol",
 				"scopeName": "source.sc",
 				"path": "./syntaxes/Rebol.tmLanguage.json",
 				"embeddedLanguages": {
-					"meta.embedded.block.sql": "mysql"
-			}
+					"meta.embedded.inline.sql": "sql"
+				}
+				
+		}
+		
 		],
 		"commands": [],
 		"keybindings": [

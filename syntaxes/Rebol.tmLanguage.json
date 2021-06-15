@@ -247,6 +247,9 @@
 				},
 				{
 					"include": "#string-nested-multiline"
+				},
+				{
+					"include": "#meta.embedded.inline.sql"
 				}
 			]
 		},
@@ -318,6 +321,11 @@
 				}
 			]
 		},
+		"meta.embedded.inline.sql": {
+			"begin": "\"",
+			"end": "\"",
+			"name": "meta.embedded.inline.sql"
+		},
 		"string-tag-double-quoted": {
 			"begin": "\"",
 			"end": "\"",
@@ -372,7 +380,12 @@
 				},
 				{
 					"include": "#string-issue"
+				},
+				{
+					"include": "#meta.embedded.inline.sql"
 				}
+
+				
 			]
 		},
 		"type-literal": {
@@ -519,5 +532,5 @@
 			]
 		}
 	},
-	"version": "https://github.com/yoyocat/rebol-vscode/commit/47c7f19488476299148785c1d39c32860abfaa5a"
+	"version": ""
 }
