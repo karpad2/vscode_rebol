@@ -47,7 +47,9 @@
 			{
 				"language": "rebol",
 				"scopeName": "source.sc",
-				"path": "./syntaxes/Rebol.tmLanguage.json"
+				"path": "./syntaxes/Rebol.tmLanguage.json",
+				"embeddedLanguages": {
+					"meta.embedded.block.sql": "mysql"
 			}
 		],
 		"commands": [],
