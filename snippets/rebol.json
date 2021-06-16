@@ -12,7 +12,7 @@
     "mysqltarcmd": {
 		"prefix": "sql tar",
 		"body": [
-		"mysql_cmd compose",
+		"mysql_cmd ",
         "[",
         "\"\t$0\"",
         "]",
@@ -20,11 +20,22 @@
 		],
 		"description": "MySQL tar command"
 	},
-    
+    "mysqltaindexrcmd": {
+		"prefix": "sql tar index",
+		"body": [
+		"mysql_cmd ",
+        "[",
+        "\"\t$0\"",
+        "]",
+        "tar: get_rekordset copy db"
+		],
+		"description": "MySQL tar command"
+	},
+
     "mysqlrekcmd": {
 		"prefix": "sql rek",
 		"body": [
-		"mysql_cmd compose",
+		"mysql_cmd ",
         "[",
         "\"\t$0\"",
         "]",
