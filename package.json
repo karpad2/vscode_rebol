@@ -1,9 +1,8 @@
 {
-	
 	"name": "rebol",
 	"displayName": "Rebol",
 	"description": "Syntax Coloring, Intellisense, Snippets and more",
-	"version": "0.1.5",
+	"version": "0.1.8",
 	"publisher": "karpad2",
 	"license": "MIT License",
 	"files.encoding": "any encoding",
@@ -59,9 +58,8 @@
 				"language": "rebol",
 				"scopeName": "source.sc",
 				"path": "./syntaxes/Rebol.tmLanguage.json"
-				
-				
-		}
+			}
+
 		
 		],
 		"commands": [],
@@ -79,47 +77,7 @@
 			"type": "object",
 			"title": "Rebol Configuration",
 			"properties": {
-				"rebol.rebolPath": {
-					"type": "string",
-					"default": "",
-					"description": "Path to rebol toolchain"
-				},
-				"rebol.excludedPath": {
-					"type": "string",
-					"default": "tests/",
-					"description": "sub-folders be excluded"
-				},
-				"rebol.buildDir": {
-					"type": "string",
-					"default": "",
-					"description": "Directory to put compiling result of rebol Source file. If not set, use workspace root directory by default."
-				},
-				"rebol.devOptions": {
-					"type": "array",
-					"default": [],
-					"description": "Advanced options used to enable new features or produce detailed diagnostics to identify extension issues."
-				},
-				"rebol.intelligence": {
-					"type": "boolean",
-					"default": true,
-					"description": "Whether to enable or disable intelligence."
-				},
-				"rebol.rls-debug": {
-					"type": "boolean",
-					"default": false,
-					"description": "Whether to enable or disable 'rebol language server' debug."
-				},
-				"rebol.server.trace.server": {
-					"scope": "window",
-					"type": "string",
-					"enum": [
-						"off",
-						"messages",
-						"verbose"
-					],
-					"default": "off",
-					"description": "Traces the communication between VS Code and the language server."
-				}
+				
 			}
 		},
 		"configurationDefaults": {

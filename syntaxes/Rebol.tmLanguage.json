@@ -333,7 +333,8 @@
 			"name": "string.other.url.rebol"
 		},
 		"string-sql": {
-			"match": "[A-Za-z][\\w-]{1,15}:(/{0,3}[^\\s\\n\\[\\]\\(\\)]+|//)",
+			"begin": "\"",
+			"end": "\"",
 			"name": "string.other.sql.rebol"
 		},
 		"strings": {
@@ -361,6 +362,9 @@
 				},
 				{
 					"include": "#string-url"
+				},
+				{
+					"include": "#string-sql"
 				},
 				{
 					"include": "#string-email"

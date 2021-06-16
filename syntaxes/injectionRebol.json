@@ -1,0 +1,22 @@
+{
+    "scopeName": "source.sc",
+    "patterns": [{ "include": "#inject" }],
+    "repository": {
+      "inject": {
+        "patterns": [{ "include": "#letter" }, { "include": "#sql" }]
+      },
+      
+      "sql": {
+        "begin": "\\(",
+        "end": "\\)",
+        "beginCaptures": {
+          "0": { "name": "punctuation.paren.open" }
+        },
+        "endCaptures": {
+          "0": { "name": "punctuation.paren.close" }
+        },
+        "name": "expression.group",
+        "patterns": [{ "include": "#expression" }]
+      }
+    }
+  }
