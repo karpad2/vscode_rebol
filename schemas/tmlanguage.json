@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/schema#",
-    "id": "https://raw.githubusercontent.com/spgennard/vscode_cobol/main/schemas/tmlanguage.json",
+    "id": "https://raw.githubusercontent.com/karpad2/vscode_rebol/master/schemas/tmlanguage.json",
     "pattern": {
     }
 }
