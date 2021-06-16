@@ -1,7 +1,7 @@
 {
     "iconDefinitions": {
         "_rbl_file": {
-            "iconPath": "./icon.png"
+            "iconPath": "images/rebol.svg"
         }
     },
     "fileExtensions": {

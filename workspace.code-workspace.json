@@ -5,16 +5,18 @@
 		}
 	],
 	"settings": {
-		"[REBOL]": {
+		"[rebol]": {
 			"editor.semanticHighlighting.enabled": true,
-            "[sc]": {
-                "files.encoding": "windows1252"
-              },
+
+                "files.encoding": "windows1250",
+              
 			"files.autoGuessEncoding": true,
             "files.trimTrailingWhitespace": true,
 			"editor.snippetSuggestions": "bottom",
 			"editor.renderIndentGuides": false,
 			"editor.formatOnType": true,
+			"editor.tabSize": 2,
+			"editor.insertSpaces": true,
 			"editor.rulers": [
 				6,
 				7,

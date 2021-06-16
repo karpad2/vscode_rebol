@@ -3,7 +3,7 @@
 	"name": "rebol",
 	"displayName": "Rebol",
 	"description": "Syntax Coloring, Intellisense, Snippets and more",
-	"version": "0.1.2",
+	"version": "0.1.5",
 	"publisher": "karpad2",
 	"license": "MIT License",
 	"files.encoding": "any encoding",
@@ -123,9 +123,13 @@
 			}
 		},
 		"configurationDefaults": {
-			"[REBOL]": {
+			"[rebol]": {
 				"editor.semanticHighlighting.enabled": true,
-				"files.autoGuessEncoding": false
+				"files.encoding": "windows1250",
+				"files.autoGuessEncoding": true,
+				"editor.tabSize": 2,
+				"editor.insertSpaces": true,
+				"editor.detectIndentation": false
 				}
 		}
 	},
