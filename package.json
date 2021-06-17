@@ -2,7 +2,7 @@
 	"name": "rebol",
 	"displayName": "Rebol",
 	"description": "Syntax Coloring, Intellisense, Snippets and more",
-	"version": "0.1.13",
+	"version": "0.1.19",
 	"publisher": "karpad2",
 	"license": "MIT License",
 	"files.encoding": "any encoding",
@@ -63,6 +63,7 @@
 				],
 				"configuration": "./rebol.configuration.json"
 			}
+			
 		],
 		"commands": [
             {
@@ -199,17 +200,8 @@
 				"embeddedLanguages": {
 					"source.sql": "sql"
 				}
-			},
-			{
-                "injectTo": [
-                    "source.sc"
-                ],
-                "scopeName": "inline.lit-sql",
-                "path": "./syntaxes/lit-sql.json",
-                "embeddedLanguages": {
-                    "meta.embedded.block.sql": "sql"
-                }
 			}
+			
 		
 		],
 		"keybindings": [

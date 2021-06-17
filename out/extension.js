@@ -2,11 +2,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.activate = void 0;
 const a = require('./bookmark');
+const RebolSuggestion_1 = require("./RebolSuggestion");
 let reboldClient;
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 function activate(context) {
     a.activate();
+    RebolSuggestion_1.completions(context);
     /*let config = rebolConfiguration.getInstance();
     
     context.subscriptions.push(vscode.commands.registerCommand("rebol.interpret", () => rebolRunInConsole()));
