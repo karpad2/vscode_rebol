@@ -2,7 +2,7 @@
 	"name": "rebol",
 	"displayName": "Rebol",
 	"description": "Syntax Coloring, Intellisense, Snippets and more",
-	"version": "0.1.19",
+	"version": "0.1.21",
 	"publisher": "karpad2",
 	"license": "MIT License",
 	"files.encoding": "any encoding",
@@ -19,6 +19,13 @@
 		"url": "https://github.com/karpad2/vscode_rebol/issues"
 	},
 	"icon": "images/icon.png",
+	"iconThemes": [
+		{
+		  "id": "rebol",
+		  "path": "./theme/icon-theme.json"
+		}
+	  ],
+	
 	"engines": {
 		"vscode": "^1.48.0"
 	},
