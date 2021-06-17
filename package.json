@@ -2,7 +2,7 @@
 	"name": "rebol",
 	"displayName": "Rebol",
 	"description": "Syntax Coloring, Intellisense, Snippets and more",
-	"version": "0.1.22",
+	"version": "0.1.24",
 	"publisher": "karpad2",
 	"license": "MIT License",
 	"files.encoding": "any encoding",
@@ -44,17 +44,7 @@
 		"onLanguage:REBOL",
 		"onLanguage:Rebol",
 		"workspaceContains:**/*.sc",
-		"onView:rebolExplorer",
-        "onCommand:rebol.jumpToRange",
-        "onCommand:rebol.refresh",
-        "onCommand:rebol.toggleShowVisibleFilesOnly",
-        "onCommand:rebol.toggleViewKeepFilesExpanded",
-        "onCommand:rebol.debug.state.reset",
-        "onCommand:rebol.showSelectBookmark",
-        "onCommand:rebol.showSelectVisibleBookmark",
-        "onCommand:rebol.listBookmarks",
-        "onCommand:rebol.listVisibleBookmarks",
-        "onCommand:rebol.scanWorkspace"
+		"onView:rebolExplorer"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -63,7 +53,8 @@
 				"id": "rebol",
 				"aliases": [
 					"REBOL",
-					"rebol"
+					"rebol",
+					"Rebol"
 				],
 				"extensions": [
 					".sc"
@@ -161,36 +152,6 @@
         ],
 		"menus": {
             "view/title": [
-                {
-                    "command": "rebol.jumpToPrevious",
-                    "when": "view == rebolExplorer",
-                    "group": "navigation@1"
-                },
-                {
-                    "command": "rebol.jumpToNext",
-                    "when": "view == rebolExplorer",
-                    "group": "navigation@2"
-                },
-                {
-                    "command": "rebol.setTreeViewFilterWords",
-                    "when": "view == rebolExplorer",
-                    "group": "navigation@3"
-                },
-                {
-                    "command": "rebol.toggleShowVisibleFilesOnly",
-                    "when": "view == rebolExplorer",
-                    "group": "navigation@4"
-                },
-                {
-                    "command": "rebol.refresh",
-                    "when": "view == rebolExplorer",
-                    "group": "navigation@5"
-                },
-                {
-                    "command": "rebol.scanWorkspace",
-                    "when": "view == rebolExplorer",
-                    "group": "navigation@6"
-                }
             ]
         },
 		"snippets": [
@@ -215,10 +176,6 @@
 			{
 				"command": "rebol.interpret",
 				"key": "F5"
-			},
-			{
-				"command": "rebol.interpret",
-				"key": "F2"
 			}
 
 
@@ -228,142 +185,8 @@
 			"type": "object",
 			"title": "Rebol Configuration",
 			"properties": {
-                "inline-bookmarks.enable": {
-                    "category": "general",
-                    "type": "boolean",
-                    "default": true,
-                    "description": "Enable/Disable the extension."
-                },
-                "inline-bookmarks.view.showVisibleFilesOnly": {
-                    "category": "view",
-                    "type": "boolean",
-                    "default": false,
-                    "description": "Show bookmarks for visible editors/files only."
-                },
-                "inline-bookmarks.view.expanded": {
-                    "category": "view",
-                    "type": "boolean",
-                    "default": false,
-                    "description": "Keep File View expanded otherwise collapsed."
-                },
-                "inline-bookmarks.view.follow": {
-                    "category": "view",
-                    "type": "boolean",
-                    "default": true,
-                    "description": "Follow bookmarks while clicking in the editor window. Highlights nearest bookmarks in the bookmarks view. (see `view.followMode` to change the follow behavior)"
-                },
-                "inline-bookmarks.view.followMode": {
-                    "category": "view",
-                    "type": "string",
-                    "enum": [
-                        "nearest",
-                        "chapter"
-                    ],
-                    "default": "nearest",
-                    "markdownDescription": "Follow mode for highlighting bookmarks in the bookmarks view. **nearest** (Default): highlight nearest bookmark relative to the current selection. **chapter**: highlight nearest bookmark before or on the currently selected line."
-                },
-                "inline-bookmarks.view.words.hide": {
-                    "category": "view",
-                    "type": "boolean",
-                    "default": false,
-                    "markdownDescription": "Hide tags/trigger words in bookmark view if a comment was provided."
-                },
-                "inline-bookmarks.default.words.red": {
-                    "category": "trigger words",
-                    "type": "string",
-                    "default": "@audit[ \\t\\n$]",
-                    "markdownDescription": "A comma-separated list of tags/trigger words (regex accepted) to highlight `red`."
-                },
-                "inline-bookmarks.default.words.green": {
-                    "category": "trigger words",
-                    "type": "string",
-                    "default": "@audit\\-ok[ \\t\\n$]",
-                    "markdownDescription": "A comma-separated list of tags/trigger words (regex accepted) to highlight `green`."
-                },
-                "inline-bookmarks.default.words.blue": {
-                    "category": "trigger words",
-                    "type": "string",
-                    "default": "@audit\\-info[ \\t\\n$], @todo[ \\t\\n$], @note[ \\t\\n$], @remind[ \\t\\n$], @follow-up[ \\t\\n$]",
-                    "markdownDescription": "A comma-separated list of tags/trigger words (regex accepted) to highlight `blue`."
-                },
-                "inline-bookmarks.default.words.purple": {
-                    "category": "trigger words",
-                    "type": "string",
-                    "default": "@audit\\-issue[ \\t\\n$]",
-                    "markdownDescription": "A comma-separated list of tags/trigger words (regex accepted) to highlight `purple`."
-                },
-                "inline-bookmarks.exceptions.words.ignore": {
-                    "category": "exceptions",
-                    "type": "string",
-                    "default": "",
-                    "markdownDescription": "A comma-separated list of tags/trigger words (`inline-bookmarks.words`) that will not be decorated."
-                },
-                "inline-bookmarks.exceptions.file.extensions.ignore": {
-                    "category": "exceptions",
-                    "type": "string",
-                    "default": "",
-                    "markdownDescription": "A comma-separated list of file extensions to ignore (e.g. .java)."
-                },
-                "inline-bookmarks.expert.custom.styles": {
-                    "category": "expert",
-                    "type": "object",
-                    "default": {},
-                    "description": "Specify Custom Decoration Profiles",
-                    "properties": {}
-                },
-                "inline-bookmarks.expert.custom.words.mapping": {
-                    "category": "expert",
-                    "type": "object",
-                    "default": {},
-                    "description": "Assigns tags/trigger words to decoration profiles",
-                    "properties": {}
-                },
-                "inline-bookmarks.search.includes": {
-                    "type": "array",
-                    "default": [
-                        "**/*"
-                    ],
-                    "description": "Glob patterns that defines the files to search for. Only include files you need, DO NOT USE `{**/*.*}` for both perfmormance and avoiding binary files reason.",
-                    "items": {
-                        "anyOf": [
-                            {
-                                "type": "string",
-                                "description": "A glob pattern that defines the files to search for. Only include files you need, DO NOT USE `**/*.*` for both performance and avoiding binary files reason"
-                            }
-                        ]
-                    }
-                },
-                "inline-bookmarks.search.excludes": {
-                    "type": "array",
-                    "default": [
-                        "**/.git/**",
-                        "**/node_modules/**",
-                        "**/bower_components/**",
-                        "**/dist/**",
-                        "**/build/**",
-                        "**/.vscode/**",
-                        "**/.github/**",
-                        "**/_output/**",
-                        "**/*.min.*",
-                        "**/*.map",
-                        "**/.next/**"
-                    ],
-                    "description": "Glob pattern that defines files and folders to exclude while listing annotations.",
-                    "items": {
-                        "anyOf": [
-                            {
-                                "type": "string",
-                                "description": "A glob pattern that defines files and folders to exclude while listing annotations"
-                            }
-                        ]
-                    }
-                },
-                "inline-bookmarks.search.maxFiles": {
-                    "type": "number",
-                    "default": 5120,
-                    "description": "Max files for searching"
-                }
-            }
+				
+			}
 		},
 		"semanticTokenTypes": [
 			{
@@ -384,10 +207,6 @@
 		  ],
 		  "views": {
             "explorer": [
-                {
-                    "id": "rebolExplorer",
-                    "name": "📘 Inline Bookmarks"
-                }
             ]
         },
 		"configurationDefaults": {

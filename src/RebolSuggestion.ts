@@ -280,13 +280,7 @@ const commandCompletions = vscode.languages.registerCompletionItemProvider(
                 composeCompletion,
                 makeCompletion,
                 tailCompletion,
-                headCompletion
-
-
-
-                
-               
-            ];
+                headCompletion ];
         }
     }
     // triggered whenever a '/' is being typed

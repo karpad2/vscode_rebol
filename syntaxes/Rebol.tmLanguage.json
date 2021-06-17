@@ -1,7 +1,6 @@
 {
 	"name": "Rebol",
 	"scopeName": "source.sc",
-	"uuid": "6BE0E13B-C4DD-478F-953A-2D84DBBCA2BA",
 	"fileTypes": [
 		"sc"
 	],
@@ -356,17 +355,17 @@
 			"begin": "\"\\s*(?=(SELECT|INSERT|UPDATE|DELETE|CREATE|REPLACE|ALTER|AND|WITH)\\b)",
 			"beginCaptures": {
 				"0": {
-					"name": "punctuation.definition.string.begin.php"
+					"name": "punctuation.definition.string.begin.rebol"
 				}
 			},
-			"contentName": "source.sql.embedded.php",
+			"contentName": "source.sql.embedded.rebol",
 			"end": "\"",
 			"endCaptures": {
 				"0": {
-					"name": "punctuation.definition.string.end.php"
+					"name": "punctuation.definition.string.end.rebol"
 				}
 			},
-			"name": "string.quoted.double.sql.php",
+			"name": "string.quoted.double.sql.rebol",
 			"patterns": [
 				{
 					"match": "(#)(\\\\\"|[^\"])*(?=\"|$)",
@@ -388,7 +387,7 @@
 				},
 				{
 					"match": "\\\\[\\\\\"`']",
-					"name": "constant.character.escape.php"
+					"name": "constant.character.escape.rebol"
 				},
 				{
 					"match": "'(?=((\\\\')|[^'\"])*(\"|$))",
@@ -617,9 +616,6 @@
 				},
 				{
 					"include": "#word-qm"
-				},
-				{
-					"include": "#word"
 				},
 				{
 					"include": "#word"
