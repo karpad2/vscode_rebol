@@ -2,7 +2,7 @@
 	"name": "rebol",
 	"displayName": "Rebol",
 	"description": "Syntax Coloring, Intellisense, Snippets and more",
-	"version": "0.1.24",
+	"version": "0.1.26",
 	"publisher": "karpad2",
 	"license": "MIT License",
 	"files.encoding": "any encoding",
@@ -14,26 +14,24 @@
 	"galleryBanner": {
 		"color": "#333333",
 		"theme": "dark"
-	  },
+	},
 	"bugs": {
 		"url": "https://github.com/karpad2/vscode_rebol/issues"
 	},
 	"icon": "images/icon.png",
 	"iconThemes": [
 		{
-		  "id": "rebol",
-		  "path": "./theme/icon-theme.json"
+			"id": "rebol",
+			"path": "./theme/icon-theme.json"
 		}
-	  ],
-	
+	],
 	"engines": {
 		"vscode": "^1.48.0"
 	},
 	"extensionKind": [
 		"workspace",
 		"ui"
-	  ],
-	  
+	],
 	"categories": [
 		"Programming Languages",
 		"Snippets",
@@ -61,105 +59,17 @@
 				],
 				"configuration": "./rebol.configuration.json"
 			}
-			
 		],
-		"commands": [
-            {
-                "command": "rebol.refresh",
-                "title": "Quick-Refresh View",
-                "category": "rebol",
-                "icon": {
-                    "light": "images/refresh-light.svg",
-                    "dark": "images/refresh-dark.svg"
-                }
-            },
-            {
-                "command": "rebol.toggleShowVisibleFilesOnly",
-                "title": "Toggle: Show Bookmarks for Visible Editors / All Files",
-                "category": "rebol",
-                "icon": {
-                    "light": "images/toggle-files-light.svg",
-                    "dark": "images/toggle-files-dark.svg"
-                }
-            },
-            {
-                "command": "rebol.toggleViewKeepFilesExpanded",
-                "title": "Toggle: Keep File View expanded",
-                "category": "rebol",
-                "icon": "images/toggle-expanded.svg"
-            },
-            {
-                "command": "rebol.jumpToPrevious",
-                "title": "Jump to Previous",
-                "category": "rebol",
-                "icon": {
-                    "light": "images/jump-previous.svg",
-                    "dark": "images/jump-previous-dark.svg"
-                }
-            },
-            {
-                "command": "rebol.jumpToNext",
-                "title": "Jump to Next",
-                "category": "rebol",
-                "icon": {
-                    "light": "images/jump-next.svg",
-                    "dark": "images/jump-next-dark.svg"
-                }
-            },
-            {
-                "command": "rebol.setTreeViewFilterWords",
-                "title": "Filter View ...",
-                "category": "rebol",
-                "icon": {
-                    "light": "images/filter-light.svg",
-                    "dark": "images/filter-dark.svg"
-                }
-            },
-            {
-                "command": "rebol.showSelectBookmark",
-                "title": "Select Bookmark",
-                "category": "rebol"
-            },
-            {
-                "command": "rebol.showSelectVisibleBookmark",
-                "title": "Select Visible Bookmark",
-                "category": "rebol"
-            },
-            {
-                "command": "rebol.listBookmarks",
-                "title": "List Bookmarks",
-                "category": "rebol"
-            },
-            {
-                "command": "rebol.listVisibleBookmarks",
-                "title": "List Visible Bookmarks",
-                "category": "rebol"
-            },
-            {
-                "command": "rebol.scanWorkspace",
-                "title": "Scan Workspace for Bookmarks",
-                "category": "rebol",
-                "icon": {
-                    "light": "images/scan-workspace.svg",
-                    "dark": "images/scan-workspace-dark.svg"
-                }
-            },
-            {
-                "command": "rebol.debug.state.reset",
-                "title": "Reset the internal state to fix potential problems",
-                "category": "rebol:Debug"
-            }
-        ],
+		"commands": [],
 		"menus": {
-            "view/title": [
-            ]
-        },
+			"view/title": []
+		},
 		"snippets": [
 			{
-			  "language": "rebol",
-			  "path": "./snippets/rebol.json"
+				"language": "rebol",
+				"path": "./snippets/rebol.json"
 			}
-		  ],
+		],
 		"grammars": [
 			{
 				"language": "rebol",
@@ -169,46 +79,33 @@
 					"source.sql": "sql"
 				}
 			}
-			
-		
 		],
-		"keybindings": [
-			{
-				"command": "rebol.interpret",
-				"key": "F5"
-			}
-
-
-		],
-		
+		"keybindings": [],
 		"configuration": {
 			"type": "object",
 			"title": "Rebol Configuration",
-			"properties": {
-				
-			}
+			"properties": {}
 		},
 		"semanticTokenTypes": [
 			{
-			  "id": "annotation",
-			  "superType": "type",
-			  "description": "Style for annotations."
+				"id": "annotation",
+				"superType": "type",
+				"description": "Style for annotations."
 			},
 			{
-			  "id": "annotationMember",
-			  "superType": "function",
-			  "description": "Style for annotation members."
+				"id": "annotationMember",
+				"superType": "function",
+				"description": "Style for annotation members."
 			},
 			{
-			  "id": "modifier",
-			  "superType": "keyword",
-			  "description": "Style for modifier keywords."
+				"id": "modifier",
+				"superType": "keyword",
+				"description": "Style for modifier keywords."
 			}
-		  ],
-		  "views": {
-            "explorer": [
-            ]
-        },
+		],
+		"views": {
+			"explorer": []
+		},
 		"configurationDefaults": {
 			"[rebol]": {
 				"editor.semanticHighlighting.enabled": true,
@@ -217,7 +114,7 @@
 				"editor.tabSize": 2,
 				"editor.insertSpaces": true,
 				"editor.detectIndentation": false
-				}
+			}
 		}
 	},
 	"scripts": {
@@ -243,6 +140,5 @@
 	},
 	"dependencies": {
 		"vscode-languageclient": "^6.1.3"
-		
 	}
 }
