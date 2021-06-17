@@ -1,12 +1,14 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.activate = void 0;
+const a = require('./bookmark');
 let reboldClient;
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 function activate(context) {
+    a.activate();
     /*let config = rebolConfiguration.getInstance();
-
+    
     context.subscriptions.push(vscode.commands.registerCommand("rebol.interpret", () => rebolRunInConsole()));
     context.subscriptions.push(vscode.commands.registerCommand("rebol.interpretGUI", () => rebolRunInGuiConsole()));
     context.subscriptions.push(vscode.commands.registerCommand("rebol.commandMenu", setCommandMenu));

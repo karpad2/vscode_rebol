@@ -1,22 +1,27 @@
 {
     "scopeName": "source.sc",
-    "patterns": [{ "include": "#inject" }],
-    "repository": {
-      "inject": {
-        "patterns": [{ "include": "#letter" }, { "include": "#sql" }]
+    "fileTypes": [
+      "sc"
+    ],
+    "patterns": [
+      {
+        "include": "#tag-stuff"
       },
-      
-      "sql": {
-        "begin": "\\(",
-        "end": "\\)",
+      {
+        "contentName": "source.sql",
+        "begin": "\"",
         "beginCaptures": {
-          "0": { "name": "punctuation.paren.open" }
+          "1": {
+            "name": "punctuation.definition.tag.end.html"
+          }
         },
-        "endCaptures": {
-          "0": { "name": "punctuation.paren.close" }
-        },
-        "name": "expression.group",
-        "patterns": [{ "include": "#expression" }]
+        "end": "(?=</style>)",
+        "patterns": [
+          {
+            "include": "source.sql"
+          }
+        ]
       }
-    }
+    ]
+  
   }

@@ -5,6 +5,7 @@ import * as vscode from 'vscode';
 import {rebolConfiguration} from  './RebolConfiguration';
 import {rebolRunInConsole, rebolRunInGuiConsole, rebolCompileInConsole, rebolCompileInGuiConsole, setCommandMenu, rebolCompileInRelease, rebolCompileClear, rebolCompileUpdate} from './commandsProvider';
 import * as vscodelc from 'vscode-languageclient';
+const a = require ('./bookmark');
 import * as path from 'path';
 
 let reboldClient: vscodelc.LanguageClient;
@@ -12,8 +13,9 @@ let reboldClient: vscodelc.LanguageClient;
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
+	a.activate();
 	/*let config = rebolConfiguration.getInstance();
-
+	
 	context.subscriptions.push(vscode.commands.registerCommand("rebol.interpret", () => rebolRunInConsole()));
 	context.subscriptions.push(vscode.commands.registerCommand("rebol.interpretGUI", () => rebolRunInGuiConsole()));
 	context.subscriptions.push(vscode.commands.registerCommand("rebol.commandMenu", setCommandMenu));

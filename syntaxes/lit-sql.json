@@ -1,0 +1,40 @@
+{
+    "fileTypes": ["source.sc"],
+    "injectionSelector": "L:source -comment -string",
+    "patterns": [
+      {
+        "name": "taggedTemplates",
+        "contentName": "meta.embedded.block.sql",
+        "begin": "\\s+mysql_cmd\\s+\\[\\s",
+        "beginCaptures": {
+          "1": {
+            "name": "entity.name.function.tagged-template.sc"
+          },
+          "2": {
+            "name": "string.sc"
+          },
+          "3": {
+            "name": "punctuation.definition.string.template.begin.sc"
+          }
+        },
+        "end": "\\s+\\]+\\s",
+        "endCaptures": {
+          "0": {
+            "name": "string.sc"
+          },
+          "1": {
+            "name": "punctuation.definition.string.template.end.sc"
+          }
+        },
+        "patterns": [
+          {
+            "include": "source.sc#template-substitution-element"
+          },
+          {
+            "include": "source.sql"
+          }
+        ]
+      }
+    ],
+    "scopeName": "inline.lit-sql"
+  }

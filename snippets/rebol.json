@@ -93,7 +93,7 @@
 		],
 		"description": "while"
 	},
-    "for each ar": {
+    "foreach ar": {
 		"prefix": "foreach [",
 		"body": [
             "foreach [ \t$0 ]",
@@ -123,6 +123,17 @@
         "\t]"
     ],
     "description": "Function "
+},
+    "context":
+    {
+    "prefix": "context",
+    "body":[
+        ": context",
+        "\t[",
+        "\t\t$1",
+        "\t]"
+    ],
+    "description": "context "
     },
     "switch default":
     {
