@@ -469,9 +469,12 @@
 				},
 				{
 					"include": "#string-issue"
+				},
+				{
+					"include": "#sql-string-double-quoted"
 				}
 
-				"#sql-string-double-quoted"
+				
 
 				
 			]
