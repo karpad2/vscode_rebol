@@ -266,6 +266,14 @@
         "]"
         ],
     "description": "tabla_keres"
+    },
+    "request/text/title/default ...":
+    {
+    "prefix": "request-text/title/default",
+    "body":[
+        "request-text/title/default \"\t$0\" sifra_dok0"
+        ],
+    "description": "request/text/title/default "
     }
 /*
 
