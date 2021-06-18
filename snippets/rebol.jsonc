@@ -1,0 +1,345 @@
+{
+    "mysql simple command ...": {
+		"prefix": "sql",
+		"body": [
+		"mysql_cmd",
+        "\t[",
+        "\t\"\t$0\"",
+        "\t]"
+		],
+		"description": "MySQL command"
+	},
+    "mysql tar cmd ...": {
+		"prefix": "sql tar",
+		"body": [
+		"mysql_cmd ",
+        "[",
+        "\t\"\t$0\"",
+        "]",
+        "tar: get_rekordset copy db"
+		],
+		"description": "MySQL tar command"
+	},
+    "mysqlta index cmd ...": {
+		"prefix": "sql tar index",
+		"body": [
+		"mysql_cmd ",
+        "[",
+        "\t\"\t$0\"",
+        "]",
+        "tar: get_rekordset copy db"
+		],
+		"description": "MySQL tar command"
+	},
+
+    "mysql rek cmd ...": {
+		"prefix": "sql rek",
+		"body": [
+		"mysql_cmd ",
+        "[",
+        "\t\"\t$0\"",
+        "]",
+        "rek: get_rekord first db"
+		],
+		"description": "MySQL rek command"
+	},
+    "excel cmd ...": {
+		"prefix": "excelcmd",
+		"body": [
+			"excel_com compose ",
+            "[",
+            "\tcolumn \t$0",
+			"\tformat \"f:0\" align \"h:Center\" \"v:Center\" \"w:1\" ; header",
+			"\tinterior \"c:#E6E6E6\" \"p:Solid\"",
+			"\t$4//${0:TODO}: handle exception",
+            "\t;",
+            "\trow  \"h:30\" interior 0 align \"h:Center\" font \"b:1\"",
+            "\tcell (\"Cell1\")",
+			"]"
+		],
+		"description": "excel_com compose"
+	},
+    "if ...": {
+		"prefix": "if ",
+		"body": [
+            "if  \t$0",
+            "[",
+            "\t$1",
+            "]"
+		],
+		"description": "if desc"
+	},
+
+    "either ...": {
+		"prefix": "either",
+		"body": [
+            "either \t$0",
+            "[",
+            "\t\t$1",
+            "]",
+            "[",
+            "\t$2",
+            "]"
+		],
+		"description": "if else"
+	},
+    "while ...": {
+		"prefix": "while",
+		"body": [
+            "while [ \t$0 ]",
+            "[",
+            "\t\t$1",
+            "]"
+		],
+		"description": "while"
+	},
+    "foreach ar ...": {
+		"prefix": "foreach [",
+		"body": [
+            "foreach [ \t$0 ]",
+            "[",
+            "\t$1",
+            "]"
+		],
+		"description": "foreach []"
+	},
+    "foreach ...": {
+		"prefix": "foreach ",
+		"body": [
+            "foreach ",
+            "[",
+            "\t$0",
+            "]"
+		],
+		"description": "foreach "
+	},
+    "function ...":
+    {
+    "prefix": "func",
+    "body":[
+        ": func [ var[object!] /local  ]",
+        "[",
+        "\t\t$1",
+        "]"
+    ],
+    "description": "Function "
+},
+    "context ...":
+    {
+    "prefix": "context",
+    "body":[
+        ": context",
+        "\t[",
+        "\t\t$1",
+        "\t]"
+    ],
+    "description": "context "
+    },
+    "switch default ...":
+    {
+    "prefix": "switch-def",
+    "body":[
+        "switch/default \t$0",
+        "[",
+        "\t$1 [ ]",
+        "\t]",
+        "\t[",
+        "\t$2",
+        "]"
+    ],
+    "description": "switch with default"
+    },
+    "switch":
+    {
+    "prefix": "switch ...",
+    "body":[
+        "switch \t$0",
+        "[",
+        "\t$1 [ ]",
+        "]"
+        
+    ],
+    "description": "switch "
+    },
+    "append ...":
+    {
+    "prefix": "append",
+    "body":[
+        "append",
+        "[",
+        "\t$0",
+        "]"
+        
+    ],
+    "description": "Append"
+    },
+    "make object ...":
+    {
+    "prefix": "make object",
+    "body":[
+        ": make object!",
+        "[",
+        "\t$0",
+        "]"
+        
+    ],
+    "description": "make object "
+    }, 
+    "make block ...":
+    {
+    "prefix": "make block",
+    "body":[
+        ": make block!",
+        "[",
+        "\t$0",
+        "]"
+        
+    ],
+    "description": "make block "
+    },
+    "charset ...":
+    {
+    "prefix": "charset : \"\"",
+    "body":[
+        " charset : \"\""
+        
+        
+    ],
+    "description": "charset : \"\""
+    },
+    "alert ...":
+    {
+    "prefix": "alert",
+    "body":[
+        "alert : \"\" exit"
+        
+        
+    ],
+    "description": "alert : \"\""
+    },
+    "get table value ...":
+    {
+    "prefix": "get_table_value : \"\"",
+    "body":[
+        "get_table_value  \"\t$0\" {var}"
+        
+        
+    ],
+    "description": "get_table_value  \"\" {var}"
+    },
+    "for ...":
+    {
+    "prefix": "for",
+    "body":[
+        "for i1 1 $0 1",
+        "[",
+        "\t",
+        "]"
+        
+        
+    ],
+    "description": "get_table_value  \"\" {var}"
+    },
+
+    "tabla_keres ...":
+    {
+    "prefix": "tabla_keres",
+    "body":[
+        "if not tabla_keres \"\t$0\"",
+        "[",
+        "\ttabla/name: \"\"",
+        "\ttabla/fejlec: \"\"",
+        "\ttabla/lista: rejoin",
+        "\t\t[",
+        "\t\t\"\"",
+        "\t]",
+        "\ttabla/nevek: \"\"",
+        "\ttabla/oszlop: \"[ ]\"",
+        "\ttabla/tipus: \"[ ]\"",
+        "\ttabla/order: \"[ ]\"",
+        "\ttabla/index: \"[1 2 4]\"",
+        "\ttabla/param: \"[ \"\" ]\"",
+        "\ttabla/paramdef:",  
+        "\t[",
+        "\t\t[\"\" \"\" \"\" \"\"]",
+        "\t]",            
+        "]"
+        ],
+    "description": "tabla_keres"
+    }
+/*
+
+tabla_blk: compose
+    [
+      size ablak_c/size
+      backtile polished color_f4
+      at 10x10 btn "Sz:M" 40x24 color_l2
+      [
+        set_window_size 'm
+        ablak_arajz
+        ablak_brajz
+        ablak_cezar
+      ]
+      at 100x10 text right "Prikaz dod.tr:" 120x24
+      at 220x10 check prikaz_tr 24x24
+      [
+        prikaz_tr: face/data
+      ]
+      at 10x50 text right "Nova šifra:" 100x24
+      at 110x50 t1_sif: field 120x24
+      at 250x50 button "Upis" 80x24 color_m2
+      [
+        novi_sif: copy t1_sif/text
+        if novi_sif = ""
+        [
+          if none? row1: oblik_dokum_rekord "FAK" "R" [ alert "Tip fakture nije dobar!" exit ]
+          sz1: dokumentum_szam_keszito row1/dok_form2 baze_sif "faktura2" "br_fak"
+          ;
+          if string? sz1 [ novi_sif: copy sz1 ]
+        ]
+        if (length? novi_sif) < 4 [ alert "Broj dokumenta nije odreðen!" exit ]
+        mysql_cmd [ "SELECT br_fak FROM faktura2 WHERE br_fak = '" novi_sif "'" ]
+        if (not empty? first db)
+        [
+          alert rejoin [ ~"Faktura:" " '" novi_sif "' " ~"veæ postoji!" ] exit
+        ]
+        ; beirni az uj rekordot:
+        faktura_sif: copy novi_sif
+        mysql_cmd
+        [
+          "INSERT INTO faktura2 SET br_fak='" faktura_sif "',otp_valuta='EUR',otp_kurs='" firma_rek/kurs_euro "',"
+          "best_nr='da',best_bk='ne',po_nar='da',zaglav='da',opis='',kor_insert='" korisnik "',dat_insert=CURDATE() "
+        ]
+        ablak_brajz
+        mysql_cmd 
+        [
+          "SELECT t1.*,"
+          "(SELECT t2.rok_pl FROM " firma/data ".partners AS t2 WHERE t2.sifra=t1.user) AS rok_pl,"
+          "(SELECT COUNT(*) FROM faktura2 AS t3 WHERE t3.br_fak LIKE CONCAT(t1.br_fak,'%')) AS col_fakt "
+          "FROM faktura2 AS t1 "
+          "WHERE t1.br_fak='" faktura_sif "' " 
+        ]
+        rek: get_rekord first db
+        either retval [ mod_faktura ][ alert "faktura nije u bazi!" faktura_sif: copy "" ]
+      ]
+      at 10x100 text right "Obrada svih faktura:" 220x24
+      at 250x100 button "Obrada" 80x24 color_b2
+      [
+        obrada_ino_racuna
+        ablak_brajz
+      ]
+    ]
+  */  
+
+
+
+
+
+
+
+    
+
+
+
+}
+
