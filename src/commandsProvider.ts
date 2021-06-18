@@ -104,7 +104,7 @@ export function rebolRunInGuiConsole(fileUri?: vscode.Uri) {
 	let filePath = getFileName(fileUri);
 	if (filePath === '') {return;}
 	let ext = path.parse(filePath).ext.toLowerCase();
-	if (ext !== ".rebol") {
+	if (ext !== ".sc") {
 		vscode.window.showErrorMessage("don't support " + ext + " file");
 		return;
 	}
