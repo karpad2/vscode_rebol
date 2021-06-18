@@ -131,6 +131,7 @@ faktura_def_01: context
         ]
         ukizn_val: 0
       ]
+      
       uk_iznosp: round/to (dec_value row0/ukupno) 0.01
       ukizn_val: ukizn_val + (dec_value row0/ukupno)
       ukizn_val: round/to ukizn_val 0.01

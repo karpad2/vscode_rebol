@@ -16,14 +16,14 @@ let reboldClient: vscodelc.LanguageClient;
 export function activate(context: vscode.ExtensionContext) {
 	a.activate();
 	completions(context);
-	/*let config = rebolConfiguration.getInstance();
+	let config = rebolConfiguration.getInstance();
 	
 	context.subscriptions.push(vscode.commands.registerCommand("rebol.interpret", () => rebolRunInConsole()));
 	context.subscriptions.push(vscode.commands.registerCommand("rebol.interpretGUI", () => rebolRunInGuiConsole()));
 	context.subscriptions.push(vscode.commands.registerCommand("rebol.commandMenu", setCommandMenu));
 	console.log("isIntelligence", config.isIntelligence);
 	if (!config.isIntelligence) {return;}
-
+/*
 	console.log("rebol console path: ", config.rebolConsole);
 	let serverModule = path.join(context.asAbsolutePath("."), "server", "server.rebol");
 	let needlog = "debug-off";
