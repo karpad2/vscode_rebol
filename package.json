@@ -67,14 +67,14 @@
 		"snippets": [
 			{
 				"language": "rebol",
-				"path": "./snippets/rebol.json"
+				"path": "./snippets/rebol.jsonc"
 			}
 		],
 		"grammars": [
 			{
 				"language": "rebol",
 				"scopeName": "source.sc",
-				"path": "./syntaxes/Rebol.tmLanguage.json",
+				"path": "./syntaxes/Rebol.tmLanguage.jsonc",
 				"embeddedLanguages": {
 					"source.sql": "sql"
 				}
