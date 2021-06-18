@@ -135,7 +135,7 @@ export function rebolCompileInConsole(fileUri?: vscode.Uri) {
 	let filePath = getFileName(fileUri);
 	if (filePath === '') {return;}
 	let ext = path.parse(filePath).ext.toLowerCase();
-	if (ext === ".rebols") {
+	if (ext === ".sc") {
 		rebolsCompile(fileUri);
 		return;
 	}
