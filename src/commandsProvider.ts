@@ -139,7 +139,7 @@ export function rebolCompileInConsole(fileUri?: vscode.Uri) {
 		rebolsCompile(fileUri);
 		return;
 	}
-	if (ext !== ".rebol") {
+	if (ext !== ".sc") {
 		vscode.window.showErrorMessage("don't support " + ext + " file");
 		return;
 	}
@@ -168,7 +168,7 @@ export function rebolCompileInGuiConsole(fileUri?: vscode.Uri) {
 	let filePath = getFileName(fileUri);
 	if (filePath === '') {return;}
 	let ext = path.parse(filePath).ext.toLowerCase();
-	if (ext !== ".rebol") {
+	if (ext !== ".sc") {
 		vscode.window.showErrorMessage("don't support " + ext + " file");
 		return;
 	}
@@ -198,7 +198,7 @@ export function rebolCompileInRelease(fileUri?: vscode.Uri) {
 	let filePath = getFileName(fileUri);
 	if (filePath === '') {return;}
 	let ext = path.parse(filePath).ext.toLowerCase();
-	if (ext !== ".rebol") {
+	if (ext !== ".sc") {
 		vscode.window.showErrorMessage("don't support " + ext + " file");
 		return;
 	}
@@ -246,7 +246,7 @@ export function rebolCompileUpdate(fileUri?: vscode.Uri) {
 	let filePath = getFileName(fileUri);
 	if (filePath === '') {return;}
 	let ext = path.parse(filePath).ext.toLowerCase();
-	if (ext !== ".rebol") {
+	if (ext !== ".sc") {
 		vscode.window.showErrorMessage("don't support " + ext + " file");
 		return;
 	}
@@ -275,7 +275,7 @@ function rebolsCompile(fileUri?: vscode.Uri) {
 	let filePath = getFileName(fileUri);
 	if (filePath === '') {return;}
 	let ext = path.parse(filePath).ext.toLowerCase();
-	if (ext !== ".rebols") {
+	if (ext !== ".sc") {
 		vscode.window.showErrorMessage("don't support " + ext + " file");
 		return;
 	}
