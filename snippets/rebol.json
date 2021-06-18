@@ -274,79 +274,31 @@
         "request-text/title/default \"\t$0\" sifra_dok0"
         ],
     "description": "request/text/title/default "
+    },
+    "tabla_blk ...":
+    {
+    "prefix": "tabla_blk ...t",
+    "body":[
+        "tabla_blk: compose",
+        "[",
+        "\tsize ablak_c/size",
+        "\tbacktile polished color_f4",
+        "\tat 10x10 btn \"Sz:M\" 40x24 color_l2",
+        "\t\t[",
+        "\t\tset_window_size 'm",
+        "\t\tablak_arajz",
+        "\t\t]",
+        "\tat 100x10 text right \"\" 120x24",
+        "\tat 220x10 check  24x24",
+        "\t\t[",
+        "\t\t\t",
+        "\t\t]",
+
+        "]"
+        
+        ],
+    "description": "tabla_blk"
     }
-/*
-
-tabla_blk: compose
-    [
-      size ablak_c/size
-      backtile polished color_f4
-      at 10x10 btn "Sz:M" 40x24 color_l2
-      [
-        set_window_size 'm
-        ablak_arajz
-        ablak_brajz
-        ablak_cezar
-      ]
-      at 100x10 text right "Prikaz dod.tr:" 120x24
-      at 220x10 check prikaz_tr 24x24
-      [
-        prikaz_tr: face/data
-      ]
-      at 10x50 text right "Nova šifra:" 100x24
-      at 110x50 t1_sif: field 120x24
-      at 250x50 button "Upis" 80x24 color_m2
-      [
-        novi_sif: copy t1_sif/text
-        if novi_sif = ""
-        [
-          if none? row1: oblik_dokum_rekord "FAK" "R" [ alert "Tip fakture nije dobar!" exit ]
-          sz1: dokumentum_szam_keszito row1/dok_form2 baze_sif "faktura2" "br_fak"
-          ;
-          if string? sz1 [ novi_sif: copy sz1 ]
-        ]
-        if (length? novi_sif) < 4 [ alert "Broj dokumenta nije odreðen!" exit ]
-        mysql_cmd [ "SELECT br_fak FROM faktura2 WHERE br_fak = '" novi_sif "'" ]
-        if (not empty? first db)
-        [
-          alert rejoin [ ~"Faktura:" " '" novi_sif "' " ~"veæ postoji!" ] exit
-        ]
-        ; beirni az uj rekordot:
-        faktura_sif: copy novi_sif
-        mysql_cmd
-        [
-          "INSERT INTO faktura2 SET br_fak='" faktura_sif "',otp_valuta='EUR',otp_kurs='" firma_rek/kurs_euro "',"
-          "best_nr='da',best_bk='ne',po_nar='da',zaglav='da',opis='',kor_insert='" korisnik "',dat_insert=CURDATE() "
-        ]
-        ablak_brajz
-        mysql_cmd 
-        [
-          "SELECT t1.*,"
-          "(SELECT t2.rok_pl FROM " firma/data ".partners AS t2 WHERE t2.sifra=t1.user) AS rok_pl,"
-          "(SELECT COUNT(*) FROM faktura2 AS t3 WHERE t3.br_fak LIKE CONCAT(t1.br_fak,'%')) AS col_fakt "
-          "FROM faktura2 AS t1 "
-          "WHERE t1.br_fak='" faktura_sif "' " 
-        ]
-        rek: get_rekord first db
-        either retval [ mod_faktura ][ alert "faktura nije u bazi!" faktura_sif: copy "" ]
-      ]
-      at 10x100 text right "Obrada svih faktura:" 220x24
-      at 250x100 button "Obrada" 80x24 color_b2
-      [
-        obrada_ino_racuna
-        ablak_brajz
-      ]
-    ]
-  */  
-
-
-
-
-
-
-
-    
-
 
 
 }

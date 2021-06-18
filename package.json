@@ -2,7 +2,7 @@
 	"name": "rebol",
 	"displayName": "Rebol",
 	"description": "Syntax Coloring, Intellisense, Snippets and more",
-	"version": "0.1.26",
+	"version": "0.1.29",
 	"publisher": "karpad2",
 	"license": "MIT License",
 	"files.encoding": "any encoding",
@@ -67,14 +67,14 @@
 		"snippets": [
 			{
 				"language": "rebol",
-				"path": "./snippets/rebol.jsonc"
+				"path": "./snippets/rebol.json"
 			}
 		],
 		"grammars": [
 			{
 				"language": "rebol",
 				"scopeName": "source.sc",
-				"path": "./syntaxes/Rebol.tmLanguage.jsonc",
+				"path": "./syntaxes/Rebol.tmLanguage.json",
 				"embeddedLanguages": {
 					"source.sql": "sql"
 				}
