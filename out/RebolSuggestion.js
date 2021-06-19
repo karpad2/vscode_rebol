@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.completions = void 0;
 const vscode = require("vscode");
 function completions(context) {
+    console.log("Completions start");
     const provider1 = vscode.languages.registerCompletionItemProvider('plaintext', {
         provideCompletionItems(document, position, token, context) {
             // a simple completion item which inserts `Hello World!`
@@ -99,7 +100,7 @@ function completions(context) {
         }
     }, '/' // triggered whenever a '/' is being typed
     );
-    const layout_slash = vscode.languages.registerCompletionItemProvider('plaintext', {
+    const layout_slash = vscode.languages.registerCompletionItemProvider('rebol', {
         provideCompletionItems(document, position) {
             // get all text until the `position` and check if it reads `console.`
             // and if so then complete if `log`, `warn`, and `error`
@@ -110,25 +111,6 @@ function completions(context) {
             return [
                 new vscode.CompletionItem('', vscode.CompletionItemKind.Method),
                 new vscode.CompletionItem('offset', vscode.CompletionItemKind.Method),
-            ];
-        }
-    }, '/' // triggered whenever a '/' is being typed
-    );
-    const objectdoubledot = vscode.languages.registerCompletionItemProvider('plaintext', {
-        provideCompletionItems(document, position) {
-            // get all text until the `position` and check if it reads `console.`
-            // and if so then complete if `log`, `warn`, and `error`
-            const linePrefix = document.lineAt(position).text.substr(0, position.character);
-            if (!linePrefix.endsWith(':')) {
-                return undefined;
-            }
-            return [
-                new vscode.CompletionItem('', vscode.CompletionItemKind.Method),
-                new vscode.CompletionItem(' copy', vscode.CompletionItemKind.Method),
-                new vscode.CompletionItem(' true', vscode.CompletionItemKind.Method),
-                new vscode.CompletionItem(' false', vscode.CompletionItemKind.Method),
-                new vscode.CompletionItem(' getlist', vscode.CompletionItemKind.Method),
-                new vscode.CompletionItem('', vscode.CompletionItemKind.Method),
             ];
         }
     }, '/' // triggered whenever a '/' is being typed
@@ -215,7 +197,8 @@ function completions(context) {
     }
     // triggered whenever a '/' is being typed
     );
-    context.subscriptions.push(xml_doc_create, xml_doc_slash, layout_slash, objectdoubledot, commandCompletions, commandCompletions);
+    context.subscriptions.push(xml_doc_create, xml_doc_slash, layout_slash, commandCompletions, commandCompletions);
+    console.log("Completions loaded");
 }
 exports.completions = completions;
 //# sourceMappingURL=RebolSuggestion.js.map

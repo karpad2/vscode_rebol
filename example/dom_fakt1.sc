@@ -141,6 +141,7 @@ faktura_def_01: context
           cell (ukizn_val)
         ]
         ukizn_val: 0
+        
       ]
       uk_iznosp: round/to (dec_value row0/ukupno) 0.01
       ukizn_val: ukizn_val + (dec_value row0/ukupno)
@@ -615,6 +616,7 @@ faktura_def_01: context
       ]
       sz1: copy row0/valuta
       sz2: copy row0/user
+      
     ]
     sz3: rejoin [ "UKUPNO part " sz2 ":" ]
     pdfcom compose
@@ -640,6 +642,7 @@ faktura_def_01: context
     write_pdf_file pdf_blk
   ]
   
+
   ios_xml: func [ mode[object!] /local tar0 row0 k0 fp1 ]
   [
     k0:  0    ; saldo
@@ -769,6 +772,7 @@ faktura_def_01: context
         ]
       ]
     ]
+    
     append tabla_blk compose
     [
       at  5x200 box color_g4 550x330 with [ edge: [color: coal size: 1x1] ]
@@ -1071,6 +1075,7 @@ faktura_def_01: context
             rek/sif_part:  copy row1/1/3
             rek/veza_dok:  copy row1/1/4
             mod_faktura
+            
           ]
         ]
         tabla_keres "faktura_izb"
@@ -1219,6 +1224,7 @@ faktura_def_01: context
       at 130x340 field rek/rabat    120x24
       at 250x340 t_nev "Dok.EP:"     70x24 
       at 320x340 arrow right 24x24 color_l2
+      
       [
         if rek/faza > "0" [ alert "Nije dozvoljeno!" exit ]
         blk1: parse/all rek/veza_dok "."
@@ -1241,6 +1247,7 @@ faktura_def_01: context
         faktura_kiiras
         mod_faktura
       ]
+      format "f:@" align "h:Center"
       at 350x340 info rek/veza_dok 140x24 color_g2
       at 490x340 btn "Dok" 40x24 color_l2
       [
@@ -1559,7 +1566,7 @@ faktura_def_01: context
     main_window/user-data: ablak_c ; gorgo bekapcsolasa
     show ablak_a
   ]
-
+set 
   set 'faktura_izb: func [ /local ]
   [
     faktura_sif: copy ""

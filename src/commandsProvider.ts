@@ -77,7 +77,7 @@ export function rebolRunInConsole(fileUri?: vscode.Uri) {
 	let filePath = getFileName(fileUri);
 	if (filePath === '') {return;}
 	let ext = path.parse(filePath).ext.toLowerCase();
-	if (ext !== ".rebol") {
+	if (ext !== ".sc") {
 		vscode.window.showErrorMessage("don't support " + ext + " file");
 		return;
 	}
@@ -104,7 +104,7 @@ export function rebolRunInGuiConsole(fileUri?: vscode.Uri) {
 	let filePath = getFileName(fileUri);
 	if (filePath === '') {return;}
 	let ext = path.parse(filePath).ext.toLowerCase();
-	if (ext !== ".rebol") {
+	if (ext !== ".sc") {
 		vscode.window.showErrorMessage("don't support " + ext + " file");
 		return;
 	}
@@ -136,10 +136,10 @@ export function rebolCompileInConsole(fileUri?: vscode.Uri) {
 	if (filePath === '') {return;}
 	let ext = path.parse(filePath).ext.toLowerCase();
 	if (ext === ".rebols") {
-		rebolsCompile(fileUri);
+		//rebolsCompile(fileUri);
 		return;
 	}
-	if (ext !== ".rebol") {
+	if (ext !== ".sc") {
 		vscode.window.showErrorMessage("don't support " + ext + " file");
 		return;
 	}
@@ -157,7 +157,7 @@ export function rebolCompileInConsole(fileUri?: vscode.Uri) {
 	command = normalFile(command);
 	execCommand(command, args);
 }
-
+/*
 export function rebolCompileInGuiConsole(fileUri?: vscode.Uri) {
 	let rebolConfigs = rebolConfiguration.getInstance();
 	let rebolTool = rebolConfigs.rebolToolChain;
@@ -168,7 +168,7 @@ export function rebolCompileInGuiConsole(fileUri?: vscode.Uri) {
 	let filePath = getFileName(fileUri);
 	if (filePath === '') {return;}
 	let ext = path.parse(filePath).ext.toLowerCase();
-	if (ext !== ".rebol") {
+	if (ext !== ".sc") {
 		vscode.window.showErrorMessage("don't support " + ext + " file");
 		return;
 	}
@@ -198,7 +198,7 @@ export function rebolCompileInRelease(fileUri?: vscode.Uri) {
 	let filePath = getFileName(fileUri);
 	if (filePath === '') {return;}
 	let ext = path.parse(filePath).ext.toLowerCase();
-	if (ext !== ".rebol") {
+	if (ext !== ".sc") {
 		vscode.window.showErrorMessage("don't support " + ext + " file");
 		return;
 	}
@@ -246,7 +246,7 @@ export function rebolCompileUpdate(fileUri?: vscode.Uri) {
 	let filePath = getFileName(fileUri);
 	if (filePath === '') {return;}
 	let ext = path.parse(filePath).ext.toLowerCase();
-	if (ext !== ".rebol") {
+	if (ext !== ".sc") {
 		vscode.window.showErrorMessage("don't support " + ext + " file");
 		return;
 	}
@@ -293,50 +293,9 @@ function rebolsCompile(fileUri?: vscode.Uri) {
 	command = normalFile(command);
 	execCommand(command, args);
 }
-
+*/
 export function setCommandMenu() {
-	const options = [
-		{
-			label: 'Run Current Script',
-			description: '',
-			command: 'rebol.interpret'
-		},
-		{
-			label: 'Run Current Script in GUI Console',
-			description: '',
-			command: 'rebol.interpretGUI'
-		},
-		{
-			label: 'Compile Current Script',
-			description: '',
-			command: 'rebol.compile'
-		},
-		{
-			label: 'Compile Current Script (GUI mode)',
-			description: '',
-			command: 'rebol.compileGUI'
-		},
-		{
-			label: 'Compile Current Script (Release mode)',
-			description: '',
-			command: 'rebol.compileRelease'
-		},
-		{
-			label: 'Delete all temporary files (librebolRT, etc)',
-			description: '',
-			command: 'rebol.clear'
-		},
-		{
-			label: 'Update librebolRT and Compile Current script',
-			description: '',
-			command: 'rebol.update'
-		}
-	];
-	vscode.window.showQuickPick(options).then(option => {
-		if (!option || !option.command || option.command.length === 0) {
-			return;
-		}
-		vscode.commands.executeCommand(option.command);
-	});
+	
+	
 }
 

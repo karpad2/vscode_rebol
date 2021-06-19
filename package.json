@@ -2,7 +2,7 @@
 	"name": "rebol",
 	"displayName": "Rebol",
 	"description": "Syntax Coloring, Intellisense, Snippets and more",
-	"version": "0.1.29",
+	"version": "0.1.30",
 	"publisher": "karpad2",
 	"license": "MIT License",
 	"files.encoding": "any encoding",
