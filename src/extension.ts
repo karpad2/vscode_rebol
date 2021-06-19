@@ -545,8 +545,6 @@ export function activate(context: vscode.ExtensionContext) {
       const minCompletion = new vscode.CompletionItem("min ");
       minCompletion.kind = vscode.CompletionItemKind.Function;
 
-      
-
       const uppercaseCompletion = new vscode.CompletionItem("uppercase ");
       uppercaseCompletion.kind = vscode.CompletionItemKind.Function;
       
