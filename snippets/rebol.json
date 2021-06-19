@@ -117,7 +117,7 @@
     {
     "prefix": "func",
     "body":[
-        ": func [ var[object!] /local  ]",
+        ": func /local  ]",
         "[",
         "\t\t$1",
         "]"
