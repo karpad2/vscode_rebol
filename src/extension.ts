@@ -255,7 +255,7 @@ export function activate(context: vscode.ExtensionContext) {
       const nextCompletion = new vscode.CompletionItem("next ");
       nextCompletion.kind = vscode.CompletionItemKind.Function;
 
-      const withCompletion = new vscode.CompletionItem("with ");
+      const withCompletion = new vscode.CompletionItem("with []");
       withCompletion.kind = vscode.CompletionItemKind.Function;
 
       const hide_popupCompletion = new vscode.CompletionItem("hide-popup ");
@@ -297,6 +297,14 @@ export function activate(context: vscode.ExtensionContext) {
 
       const nullCompletion = new vscode.CompletionItem("null ");
       nullCompletion.kind = vscode.CompletionItemKind.Constant;
+
+      const string1Completion = new vscode.CompletionItem("string? ");
+      string1Completion.kind = vscode.CompletionItemKind.Constant;
+
+      const string2Completion = new vscode.CompletionItem("string! ");
+      string2Completion.kind = vscode.CompletionItemKind.Constant;
+
+      
 
       const assertCompletion = new vscode.CompletionItem("assert ");
       assertCompletion.kind = vscode.CompletionItemKind.Function;
@@ -368,6 +376,11 @@ export function activate(context: vscode.ExtensionContext) {
 	  const originCompletion = new vscode.CompletionItem("origin: ");
       originCompletion.kind = vscode.CompletionItemKind.Variable;
 
+      const dataCompletion = new vscode.CompletionItem("data: ");
+      dataCompletion.kind = vscode.CompletionItemKind.Variable;
+
+      
+
 	  const boldCompletion = new vscode.CompletionItem("bold ");
       boldCompletion.kind = vscode.CompletionItemKind.Value;
 	  
@@ -430,6 +443,11 @@ export function activate(context: vscode.ExtensionContext) {
       const arrowCompletion = new vscode.CompletionItem("arrow ");
       arrowCompletion.kind = vscode.CompletionItemKind.Function;
 
+      const replaceCompletion = new vscode.CompletionItem("replace ");
+      replaceCompletion.kind = vscode.CompletionItemKind.Function;
+
+      
+
       const focusCompletion = new vscode.CompletionItem("focus ");
       focusCompletion.kind = vscode.CompletionItemKind.Function;
 
@@ -474,6 +492,9 @@ export function activate(context: vscode.ExtensionContext) {
       const ablak_cezarCompletion = new vscode.CompletionItem("ablak_cezar ");
       ablak_cezarCompletion.kind = vscode.CompletionItemKind.Function;
 
+      const sortCompletion = new vscode.CompletionItem("sort ");
+      sortCompletion.kind = vscode.CompletionItemKind.Function;
+
       const retvalCompletion = new vscode.CompletionItem("retval ");
       retvalCompletion.kind = vscode.CompletionItemKind.Variable;
 
@@ -491,6 +512,10 @@ export function activate(context: vscode.ExtensionContext) {
 
 	  const tlabCompletion = new vscode.CompletionItem("tlab ");
       tlabCompletion.kind = vscode.CompletionItemKind.Variable;
+      const keycodeCompletion = new vscode.CompletionItem("keycode ");
+      keycodeCompletion.kind = vscode.CompletionItemKind.Function;
+
+      
 
       const write_modeCompletion = new vscode.CompletionItem("write_mode ");
       write_modeCompletion.kind = vscode.CompletionItemKind.Variable;
@@ -505,8 +530,63 @@ export function activate(context: vscode.ExtensionContext) {
 
 	  const money_formCompletion = new vscode.CompletionItem("money_form ");
       money_formCompletion.kind = vscode.CompletionItemKind.Function;
+      const clearCompletion = new vscode.CompletionItem("clear ");
+      clearCompletion.kind = vscode.CompletionItemKind.Function;
+      const sliderCompletion = new vscode.CompletionItem("slider ");
+      sliderCompletion.kind = vscode.CompletionItemKind.Function;
 
-	  
+      const pairCompletion = new vscode.CompletionItem("pair! ");
+      pairCompletion.kind = vscode.CompletionItemKind.Interface;
+      
+
+      const maxCompletion = new vscode.CompletionItem("max ");
+      maxCompletion.kind = vscode.CompletionItemKind.Function;
+
+      const minCompletion = new vscode.CompletionItem("min ");
+      minCompletion.kind = vscode.CompletionItemKind.Function;
+
+      
+
+      const uppercaseCompletion = new vscode.CompletionItem("uppercase ");
+      uppercaseCompletion.kind = vscode.CompletionItemKind.Function;
+      
+      const dok_pathCompletion = new vscode.CompletionItem("dok_path ");
+      dok_pathCompletion.kind = vscode.CompletionItemKind.Folder;
+
+      const dir_specialCompletion = new vscode.CompletionItem("dir_special ");
+      dir_specialCompletion.kind = vscode.CompletionItemKind.Folder;
+      
+      const ftp_cr_arCompletion = new vscode.CompletionItem("ftp_create_arhivpath ");
+      ftp_cr_arCompletion.kind = vscode.CompletionItemKind.Function;
+
+      const systemCompletion = new vscode.CompletionItem("system ");
+      systemCompletion.kind = vscode.CompletionItemKind.Class;
+
+      const as_pairCompletion = new vscode.CompletionItem("as-pair ");
+      as_pairCompletion.kind = vscode.CompletionItemKind.Function;
+
+      const evid_purCompletion = new vscode.CompletionItem("evid_pur ");
+      evid_purCompletion.kind = vscode.CompletionItemKind.Function;
+
+      const mysql_bulkCompletion = new vscode.CompletionItem("mysql_bulk ");
+      mysql_bulkCompletion.kind = vscode.CompletionItemKind.Function;
+
+      const returnCompletion = new vscode.CompletionItem("return ");
+      returnCompletion.kind = vscode.CompletionItemKind.Function;
+      
+      
+      
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
 	  
 
       const funcCompletion = new vscode.CompletionItem("func");
@@ -644,7 +724,26 @@ export function activate(context: vscode.ExtensionContext) {
 		tlabCompletion,
 		boldCompletion,
 		btnCompletion,
-		money_formCompletion
+		money_formCompletion,
+    clearCompletion,
+    string1Completion,
+    string2Completion,
+    keycodeCompletion,
+    sortCompletion,
+    sliderCompletion,
+    maxCompletion,
+    replaceCompletion,
+    uppercaseCompletion,
+    dok_pathCompletion,
+    dir_specialCompletion,
+    ftp_cr_arCompletion,
+    systemCompletion,
+    pairCompletion,
+    as_pairCompletion,
+    dataCompletion,
+    evid_purCompletion,
+    mysql_bulkCompletion,
+    returnCompletion
       ];
     },
   });
@@ -669,6 +768,19 @@ export function activate(context: vscode.ExtensionContext) {
           new vscode.CompletionItem("skip ", vscode.CompletionItemKind.Method),
           new vscode.CompletionItem("only ", vscode.CompletionItemKind.Method),
           new vscode.CompletionItem("all ", vscode.CompletionItemKind.Method),
+          new vscode.CompletionItem("part ", vscode.CompletionItemKind.Method),
+          new vscode.CompletionItem("offset ", vscode.CompletionItemKind.Method),
+          new vscode.CompletionItem("filter ", vscode.CompletionItemKind.Method),
+          new vscode.CompletionItem("file ", vscode.CompletionItemKind.Method),
+          new vscode.CompletionItem("keep ", vscode.CompletionItemKind.Method),
+          new vscode.CompletionItem("local ", vscode.CompletionItemKind.Method),
+          new vscode.CompletionItem("first ", vscode.CompletionItemKind.Method),
+          new vscode.CompletionItem("last ", vscode.CompletionItemKind.Method),
+          new vscode.CompletionItem("size ", vscode.CompletionItemKind.Method),
+          
+          
+          
+          
           /*Vars */
           new vscode.CompletionItem("text ", vscode.CompletionItemKind.Variable),
           new vscode.CompletionItem("data ", vscode.CompletionItemKind.Variable),
@@ -694,7 +806,33 @@ export function activate(context: vscode.ExtensionContext) {
 		  new vscode.CompletionItem("kor_modif ", vscode.CompletionItemKind.Variable),
 		  new vscode.CompletionItem("uplata ", vscode.CompletionItemKind.Variable),
 		  new vscode.CompletionItem("user-data ", vscode.CompletionItemKind.Variable),
+      new vscode.CompletionItem("title ", vscode.CompletionItemKind.Variable),
+      new vscode.CompletionItem("default ", vscode.CompletionItemKind.Variable),
+      new vscode.CompletionItem("fejlec ", vscode.CompletionItemKind.Variable),
+      new vscode.CompletionItem("name ", vscode.CompletionItemKind.Variable),
+      new vscode.CompletionItem("lista ", vscode.CompletionItemKind.Variable),
+      new vscode.CompletionItem("nevek ", vscode.CompletionItemKind.Variable),
+      new vscode.CompletionItem("oszlop ", vscode.CompletionItemKind.Variable),
+      new vscode.CompletionItem("tipus ", vscode.CompletionItemKind.Variable),
+      new vscode.CompletionItem("order ", vscode.CompletionItemKind.Variable),
+      new vscode.CompletionItem("index ", vscode.CompletionItemKind.Variable),
+      new vscode.CompletionItem("pane ", vscode.CompletionItemKind.Variable),
+      new vscode.CompletionItem("arhiv_map ", vscode.CompletionItemKind.Variable),
+      new vscode.CompletionItem("file_tips ", vscode.CompletionItemKind.Variable),
+      new vscode.CompletionItem("network ", vscode.CompletionItemKind.Variable),
+      new vscode.CompletionItem("host ", vscode.CompletionItemKind.Variable),
+      new vscode.CompletionItem("br_ugov ", vscode.CompletionItemKind.Variable),
+      new vscode.CompletionItem("serija ", vscode.CompletionItemKind.Variable),
+      new vscode.CompletionItem("deep ", vscode.CompletionItemKind.Variable),
+      new vscode.CompletionItem("cena ", vscode.CompletionItemKind.Variable),
 
+      
+      
+      new vscode.CompletionItem("host-address ", vscode.CompletionItemKind.Variable),
+      
+      new vscode.CompletionItem("dok_path ", vscode.CompletionItemKind.File),
+      
+      
 		  
 		  
           new vscode.CompletionItem(

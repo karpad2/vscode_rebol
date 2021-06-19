@@ -33,6 +33,7 @@ evid_pur_def_01: context
     mysql_cmd [ "SELECT  br_fak FROM faktura2 WHERE br_fak LIKE '" sz0 "%' ORDER BY br_fak DESC LIMIT 1" ]
     row0: get_rekord first db
     ;
+     
     blk0: parse/all row0/br_fak "-"
     either (length? blk0) < 2 [ append blk0 "1" ]
     [
@@ -784,6 +785,7 @@ evid_pur_def_01: context
           program_nev: ~"Zahtev-nabavke" program_indito
         ]
       ]
+      
       p1: p1 + 125x0
       poz1: next poz1
     ]
@@ -797,6 +799,7 @@ evid_pur_def_01: context
     p2: -1
     panel_blk1: compose/only
     [
+      
       style tlab text with [ edge: [color: coal size: 1x1 ] ]
       style t_fld field 100x24
       across space -1x1
