@@ -7,8 +7,7 @@
 	"settings": {
 		"[rebol]": {
 			"editor.semanticHighlighting.enabled": true,
-
-                "files.encoding": "windows1250",
+			"files.encoding": "windows1250",
               
 			"files.autoGuessEncoding": true,
             "files.trimTrailingWhitespace": true,
