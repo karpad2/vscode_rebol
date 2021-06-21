@@ -1798,6 +1798,7 @@ evid_pur_def_01: context
       at (as-pair 0 (merety - 20)) slider (as-pair meretb 20) with [ user-data: ablak_b ]
       [ scroller_pozicio face ]
       at (as-pair meretb 40) slider (as-pair 20 (merety - 40)) with [ user-data: ablak_b ]
+      
       [ scroller_pozicio face ]
       at (as-pair (meretb + 20) 40) ablak_c: box color_g4 (as-pair (meretx - meretb - 40) (merety - 40)) with [ edge: [color: coal size: 1x1 ] ]
       at (as-pair (meretx - 20) 40) slider (as-pair 20 (merety - 40)) with [ user-data: ablak_c ]
