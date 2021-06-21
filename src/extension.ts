@@ -537,6 +537,14 @@ export function activate(context: vscode.ExtensionContext) {
 
 	  const tlabCompletion = new vscode.CompletionItem("tlab ");
       tlabCompletion.kind = vscode.CompletionItemKind.Variable;
+
+      const tlab1Completion = new vscode.CompletionItem("tlab... ");
+      tlab1Completion.kind = vscode.CompletionItemKind.Variable;
+      tlab1Completion.insertText= new vscode.SnippetString(
+        'tlab $left,center,right|} "" 40x28 color_h1 color_h2'
+      )
+
+      
       const keycodeCompletion = new vscode.CompletionItem("keycode ");
       keycodeCompletion.kind = vscode.CompletionItemKind.Function;
 
@@ -817,6 +825,7 @@ export function activate(context: vscode.ExtensionContext) {
 		originCompletion,
 		w_dateCompletion,
 		tlabCompletion,
+    tlab1Completion,
 		boldCompletion,
 		btnCompletion,
 		money_formCompletion,
