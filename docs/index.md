@@ -20,7 +20,7 @@ pl ha szeretnétek változtatni a kódoláson akkor package.json fileban lehet e
 ## Intellisense hozzáadása
 Az intellisense-t először is definiálni kell az alábbi módon
 ```
-load_pdf_fontCompletion.insertText= new vscode.SnippetString(       'load_pdf_font "${1|T1,TB,A1,AB,AIB|}"')
+load_pdf_fontCompletion.insertText=new vscode.SnippetString('load_pdf_font "${1|T1,TB,A1,AB,AIB|}"')
 ```
 
 Ammenyiben több változós az eset akkor a számozást folytatod
