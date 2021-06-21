@@ -170,8 +170,7 @@ export function activate(context: vscode.ExtensionContext) {
 
       const object1Completion = new vscode.CompletionItem("object! ");
       object1Completion.kind = vscode.CompletionItemKind.Class;
-
-      
+     
 
       const modeCompletion = new vscode.CompletionItem("mode ");
       modeCompletion.kind = vscode.CompletionItemKind.Variable;
@@ -618,22 +617,13 @@ export function activate(context: vscode.ExtensionContext) {
       const coalCompletion = new vscode.CompletionItem("coal ");
       coalCompletion.kind = vscode.CompletionItemKind.Color; 
       
-      
-      
-      
-
-      
-
-      
-	  
-
       const funcCompletion = new vscode.CompletionItem("func");
       funcCompletion.kind = vscode.CompletionItemKind.Function;
       funcCompletion.insertText = " func \n\r [\n \t\n ]";
 
       const formatCompletion = new vscode.CompletionItem("format");
       formatCompletion.insertText = new vscode.SnippetString(
-        'format "f:${1|###\,##0.00,@|}" align "h:${2|Left,Center,Right|}"'
+        'format "f:###,##0.00" align "h:${1|Left,Center,Right|}"'
       );
       formatCompletion.kind = vscode.CompletionItemKind.Function;
       
@@ -657,13 +647,13 @@ export function activate(context: vscode.ExtensionContext) {
       
       const rowCompletion = new vscode.CompletionItem("row");
       rowCompletion.insertText = new vscode.SnippetString(
-        'row interior 0 align "h:${1|Left,Center,Right|}" font "b:${2|0,1,2}" '
+        'row interior 0 align "h:${1|Left,Center,Right|}" font "b:${1|0,1,2}" '
       );
       rowCompletion.kind = vscode.CompletionItemKind.Function;
 
       const taCompletion = new vscode.CompletionItem("ta");
       taCompletion.insertText = new vscode.SnippetString(
-        'ta ${1|left,center,right|} () ${2|,(as-pair 25 y1)|}'
+        'ta ${1|left,center,right|} () ${1|,(as-pair 25 y1)|}'
       );
       taCompletion.kind = vscode.CompletionItemKind.Function;
       
@@ -676,8 +666,8 @@ export function activate(context: vscode.ExtensionContext) {
       fnCompletion.kind = vscode.CompletionItemKind.Function;
 
       const  nlCompletion = new vscode.CompletionItem("nl");
-      fnCompletion.insertText = new vscode.SnippetString(
-        'nl ${1|(as-pair 0 y1),0x10|} ${1|,fn|} ${1|,cb 1.0|} ${2|,cg 1.0|} tv middle'
+      nlCompletion.insertText = new vscode.SnippetString(
+        'nl ${1|(as-pair 0 y1),0x10|} ${1|,fn|} ${1|,cb 1.0|} ${1|,cg 1.0|} tv middle'
       );
       nlCompletion.kind = vscode.CompletionItemKind.Function;
       
@@ -719,7 +709,6 @@ export function activate(context: vscode.ExtensionContext) {
         buttonCompletion,
         composeCompletion,
         makeCompletion,
-        tailCompletion,
         headCompletion,
         copyCompletion,
         fieldCompletion,
@@ -887,8 +876,7 @@ export function activate(context: vscode.ExtensionContext) {
           new vscode.CompletionItem("last ", vscode.CompletionItemKind.Method),
           new vscode.CompletionItem("size ", vscode.CompletionItemKind.Method),
                  
-          
-          
+                   
           /*Vars */
           new vscode.CompletionItem("text ", vscode.CompletionItemKind.Variable),
           new vscode.CompletionItem("data ", vscode.CompletionItemKind.Variable),
@@ -937,8 +925,6 @@ export function activate(context: vscode.ExtensionContext) {
           new vscode.CompletionItem("host-address ", vscode.CompletionItemKind.Variable),          
           new vscode.CompletionItem("dok_path ", vscode.CompletionItemKind.File),
       
-      
-		  
 		  
           new vscode.CompletionItem(
             "br_dok",
