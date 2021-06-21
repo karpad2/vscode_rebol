@@ -4,7 +4,7 @@
 		"body": [
 		"mysql_cmd",
         "\t[",
-        "\t\"\t$0\"",
+        "\t\"$0\"",
         "\t]"
 		],
 		"description": "MySQL command"
@@ -14,7 +14,7 @@
 		"body": [
 		"mysql_cmd ",
         "[",
-        "\t\"\t$0\"",
+        "\t\"$0\"",
         "]",
         "tar: get_rekordset copy db"
 		],

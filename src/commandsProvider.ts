@@ -135,8 +135,8 @@ export function rebolCompileInConsole(fileUri?: vscode.Uri) {
 	let filePath = getFileName(fileUri);
 	if (filePath === '') {return;}
 	let ext = path.parse(filePath).ext.toLowerCase();
-	if (ext === ".rebols") {
-		//rebolsCompile(fileUri);
+	if (ext === ".sc") {
+		rebolsCompile(fileUri);
 		return;
 	}
 	if (ext !== ".sc") {
@@ -157,7 +157,7 @@ export function rebolCompileInConsole(fileUri?: vscode.Uri) {
 	command = normalFile(command);
 	execCommand(command, args);
 }
-/*
+
 export function rebolCompileInGuiConsole(fileUri?: vscode.Uri) {
 	let rebolConfigs = rebolConfiguration.getInstance();
 	let rebolTool = rebolConfigs.rebolToolChain;
@@ -275,7 +275,7 @@ function rebolsCompile(fileUri?: vscode.Uri) {
 	let filePath = getFileName(fileUri);
 	if (filePath === '') {return;}
 	let ext = path.parse(filePath).ext.toLowerCase();
-	if (ext !== ".rebols") {
+	if (ext !== ".sc") {
 		vscode.window.showErrorMessage("don't support " + ext + " file");
 		return;
 	}
@@ -293,9 +293,49 @@ function rebolsCompile(fileUri?: vscode.Uri) {
 	command = normalFile(command);
 	execCommand(command, args);
 }
-*/
+
 export function setCommandMenu() {
-	
-	
+	const options = [
+		{
+			label: 'Run Current Script',
+			description: '',
+			command: 'rebol.interpret'
+		},
+		{
+			label: 'Run Current Script in GUI Console',
+			description: '',
+			command: 'rebol.interpretGUI'
+		},
+		{
+			label: 'Compile Current Script',
+			description: '',
+			command: 'rebol.compile'
+		},
+		{
+			label: 'Compile Current Script (GUI mode)',
+			description: '',
+			command: 'rebol.compileGUI'
+		},
+		{
+			label: 'Compile Current Script (Release mode)',
+			description: '',
+			command: 'rebol.compileRelease'
+		},
+		{
+			label: 'Delete all temporary files (librebolRT, etc)',
+			description: '',
+			command: 'rebol.clear'
+		},
+		{
+			label: 'Update librebolRT and Compile Current script',
+			description: '',
+			command: 'rebol.update'
+		}
+	];
+	vscode.window.showQuickPick(options).then(option => {
+		if (!option || !option.command || option.command.length === 0) {return;
+		}
+		vscode.commands.executeCommand(option.command);
+	});
 }
 
