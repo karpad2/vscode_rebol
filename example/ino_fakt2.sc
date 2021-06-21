@@ -367,6 +367,7 @@ ino_fakt_def_01: context
         cell (uk_iznosp)
         format "f:@" align "h:Center"
         cell (row0/godina)
+       load_pdf_font "T1"
       ]
       if sif_part <> ""
       [

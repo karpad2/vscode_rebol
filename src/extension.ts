@@ -454,6 +454,9 @@ export function activate(context: vscode.ExtensionContext) {
 	  const row1Completion = new vscode.CompletionItem("row1 ");
       row1Completion.kind = vscode.CompletionItemKind.Value;
 
+      const apjelCompletion = new vscode.CompletionItem("apjel ");
+      apjelCompletion.kind = vscode.CompletionItemKind.Value;
+
 	  
 
       const blkCompletion = new vscode.CompletionItem("blk ");
@@ -644,6 +647,11 @@ export function activate(context: vscode.ExtensionContext) {
 
       const autosizeCompletion = new vscode.CompletionItem("autosize ");
       autosizeCompletion.kind = vscode.CompletionItemKind.Function;
+
+      const unviewCompletion = new vscode.CompletionItem("unview ");
+      unviewCompletion.kind = vscode.CompletionItemKind.Function;
+
+      
     
 
       
@@ -844,7 +852,9 @@ export function activate(context: vscode.ExtensionContext) {
     nlCompletion,
     txt_szoveg_tordelCompletion,
     tvCompletion,
-    autosizeCompletion
+    autosizeCompletion,
+    unviewCompletion,
+    apjelCompletion
       ];
     },
   });
