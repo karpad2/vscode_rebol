@@ -657,13 +657,13 @@ export function activate(context: vscode.ExtensionContext) {
       
       const rowCompletion = new vscode.CompletionItem("row");
       rowCompletion.insertText = new vscode.SnippetString(
-        'row interior 0 align "h:${2|Left,Center,Right|}" font "b:${1|0,1,2}" '
+        'row interior 0 align "h:${1|Left,Center,Right|}" font "b:${2|0,1,2}" '
       );
       rowCompletion.kind = vscode.CompletionItemKind.Function;
 
       const taCompletion = new vscode.CompletionItem("ta");
       taCompletion.insertText = new vscode.SnippetString(
-        'ta ${2|Left,Center,Right|} () ${2|,(as-pair 25 y1)|}'
+        'ta ${1|left,center,right|} () ${2|,(as-pair 25 y1)|}'
       );
       taCompletion.kind = vscode.CompletionItemKind.Function;
       
@@ -671,19 +671,19 @@ export function activate(context: vscode.ExtensionContext) {
 
       const  fnCompletion = new vscode.CompletionItem("fn");
       fnCompletion.insertText = new vscode.SnippetString(
-        'fn "${2|A1,A2,AB|}"'
+        'fn "${1|A1,A2,AB|}"'
       );
       fnCompletion.kind = vscode.CompletionItemKind.Function;
 
       const  nlCompletion = new vscode.CompletionItem("nl");
       fnCompletion.insertText = new vscode.SnippetString(
-        'nl ${2|(as-pair 0 y1),0x10|} ${1|,fn|} ${1|,cb 1.0|} ${1|,cg 1.0|} tv middle'
+        'nl ${1|(as-pair 0 y1),0x10|} ${1|,fn|} ${1|,cb 1.0|} ${2|,cg 1.0|} tv middle'
       );
       nlCompletion.kind = vscode.CompletionItemKind.Function;
       
       const  tvCompletion = new vscode.CompletionItem("tv");
       tvCompletion.insertText = new vscode.SnippetString(
-        'tv ${2|middle,bottom|} '
+        'tv ${1|middle,bottom|} '
       );
       tvCompletion.kind = vscode.CompletionItemKind.Function;
       
