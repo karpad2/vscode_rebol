@@ -11,6 +11,8 @@ faktura_def_01: context
   sif_part:    copy "" ; a partner kivalasztasahoz, az isvestajoknal
   naz_part:    copy "" ; a partner kivalasztasahoz, az isvestajoknal
   ;
+  
+  
   xml_rekap_ir_detaljno: func [ mode[object!] /local tar0 sif0 row0 tar1 row1 poz0 k0 uk_iznosp uk_iznos ukizn_val val0 sz1 sz2 sz3 i0 n0 oour0 ]
   [
     tar1: make block! []
@@ -21,11 +23,14 @@ faktura_def_01: context
     ukizn_val: 0    ; uk.iznos po valute
     i0: 0
     n0: 0
+    
     oour0: copy ""   ; 
     sz1:   copy ""
     sz2:   copy ""
     sz3:   copy ""
     ;
+    
+    
     if mode/partner <> ""
     [
       sz1: rejoin [ "AND t1.sif_part=" apjel (mode/partner) apjel " " ]
@@ -42,6 +47,7 @@ faktura_def_01: context
       "ORDER BY valuta ASC,partner ASC,t1.br_rac ASC "
     ]
     tar0: get_rekordset copy db
+    
     mysql_cmd compose
     [
       "SELECT t1.br_rac,t1.sif_part,t1.ukupno,t1.datum,MID(t1.datum,1,4) AS godina,t1.br_dok,"
@@ -66,7 +72,6 @@ faktura_def_01: context
       column 40 180 45 40 80 80 80 50 70
       format "f:0" align "h:Center" "v:Center" "w:1" ; fejlec
       interior "c:#E6E6E6" "p:Solid"
-      ;
       row  "h:30" interior 0 align "h:Center" font "b:1"
       cell ("Šif.^/Part.")
       cell ("Partner")
@@ -82,11 +87,13 @@ faktura_def_01: context
       excel_com compose
       [
         cell ("Br.fakt.")
+        
       ]
     ]
     poz0: head tar0
     while [ not tail? poz0 ]
     [
+      
       row0: poz0/1
       ;-- koszovo dinarban
       if row0/sif_drzave = "XK"
@@ -100,6 +107,7 @@ faktura_def_01: context
         row0/ukupno: (dec_value rek0/iznos) + (dec_value rek0/izn_pdv)
         row0/valuta: copy "RSD"
       ]
+      
       if row0/br_dok/1 = #"7" [ row0/valuta: copy "RSD" ]
       row1: select magacin_blk to-integer row0/sif_mag
       if not none? row1
@@ -110,6 +118,7 @@ faktura_def_01: context
       append tar1 row0
       poz0: next poz0
     ]
+  
     sort/skip tar1 2
     n0: length? tar1
     n0: n0 / 2
@@ -119,6 +128,7 @@ faktura_def_01: context
       if oour0 = "" [ oour0: copy row0/sif_oour ]
       ;
       if oour0 <> row0/sif_oour
+      
       [
         sz1: rejoin [ "Ukupno po lokacija: " (oour0) ":" ]
         excel_com compose
@@ -127,9 +137,11 @@ faktura_def_01: context
           format "f:@" align "h:Right"
           cell merge 5 (sz1)
           format "f:###,##0.00" align "h:Right"
+          
           cell (ukizn_val)
         ]
         ukizn_val: 0
+        
       ]
       
       uk_iznosp: round/to (dec_value row0/ukupno) 0.01
@@ -137,6 +149,7 @@ faktura_def_01: context
       ukizn_val: round/to ukizn_val 0.01
       uk_iznos:  uk_iznos  + (dec_value row0/ukupno)
       uk_iznos:  round/to uk_iznos 0.01
+      
       excel_com compose
       [
         row interior 0 font "b:0"
@@ -153,6 +166,7 @@ faktura_def_01: context
         cell (uk_iznosp)
         format "f:@" align "h:Center"
         cell (row0/godina)
+        
       ]
       if sif_part <> ""
       [
@@ -351,6 +365,7 @@ faktura_def_01: context
         ]
         ukizn_val: 0
       ]
+      
       ;
       uk_iznosp: round/to (dec_value poz0/2) 0.01
       ukizn_val: ukizn_val + (dec_value poz0/2)
@@ -602,6 +617,7 @@ faktura_def_01: context
       ]
       sz1: copy row0/valuta
       sz2: copy row0/user
+      
     ]
     sz3: rejoin [ "UKUPNO part " sz2 ":" ]
     pdfcom compose
@@ -627,6 +643,7 @@ faktura_def_01: context
     write_pdf_file pdf_blk
   ]
   
+
   ios_xml: func [ mode[object!] /local tar0 row0 k0 fp1 ]
   [
     k0:  0    ; saldo
@@ -756,6 +773,7 @@ faktura_def_01: context
         ]
       ]
     ]
+    
     append tabla_blk compose
     [
       at  5x200 box color_g4 550x330 with [ edge: [color: coal size: 1x1] ]
@@ -1058,6 +1076,7 @@ faktura_def_01: context
             rek/sif_part:  copy row1/1/3
             rek/veza_dok:  copy row1/1/4
             mod_faktura
+            
           ]
         ]
         tabla_keres "faktura_izb"
@@ -1206,6 +1225,7 @@ faktura_def_01: context
       at 130x340 field rek/rabat    120x24
       at 250x340 t_nev "Dok.EP:"     70x24 
       at 320x340 arrow right 24x24 color_l2
+      
       [
         if rek/faza > "0" [ alert "Nije dozvoljeno!" exit ]
         blk1: parse/all rek/veza_dok "."
@@ -1228,6 +1248,7 @@ faktura_def_01: context
         faktura_kiiras
         mod_faktura
       ]
+      format "f:@" align "h:Center"
       at 350x340 info rek/veza_dok 140x24 color_g2
       at 490x340 btn "Dok" 40x24 color_l2
       [
@@ -1546,7 +1567,7 @@ faktura_def_01: context
     main_window/user-data: ablak_c ; gorgo bekapcsolasa
     show ablak_a
   ]
-
+set 
   set 'faktura_izb: func [ /local ]
   [
     faktura_sif: copy ""

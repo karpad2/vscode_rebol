@@ -2,7 +2,7 @@
 import * as vscode from 'vscode';
 
 export function completions (context: vscode.ExtensionContext) {
-
+console.log("Completions start");
 const provider1 = vscode.languages.registerCompletionItemProvider('plaintext', {
 
     provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken, context: vscode.CompletionContext) {
@@ -129,7 +129,7 @@ const compose_slash = vscode.languages.registerCompletionItemProvider(
     '/' // triggered whenever a '/' is being typed
 );
 const layout_slash = vscode.languages.registerCompletionItemProvider(
-    'plaintext',
+    'rebol',
     {
         provideCompletionItems(document: vscode.TextDocument, position: vscode.Position) {
 
@@ -149,33 +149,7 @@ const layout_slash = vscode.languages.registerCompletionItemProvider(
     '/' // triggered whenever a '/' is being typed
 );
 
-const objectdoubledot = vscode.languages.registerCompletionItemProvider(
-    'plaintext',
-    {
-        provideCompletionItems(document: vscode.TextDocument, position: vscode.Position) {
 
-            // get all text until the `position` and check if it reads `console.`
-            // and if so then complete if `log`, `warn`, and `error`
-            const linePrefix = document.lineAt(position).text.substr(0, position.character);
-            if (!linePrefix.endsWith(':')) {
-                return undefined;
-            }
-
-
-
-            return [
-                new vscode.CompletionItem('', vscode.CompletionItemKind.Method),
-                new vscode.CompletionItem(' copy', vscode.CompletionItemKind.Method),
-                new vscode.CompletionItem(' true', vscode.CompletionItemKind.Method),
-                new vscode.CompletionItem(' false', vscode.CompletionItemKind.Method),
-                new vscode.CompletionItem(' getlist', vscode.CompletionItemKind.Method),
-                new vscode.CompletionItem('', vscode.CompletionItemKind.Method),
-               
-            ];
-        }
-    },
-    '/' // triggered whenever a '/' is being typed
-);
 
 const commandCompletions = vscode.languages.registerCompletionItemProvider(
     'plaintext',
@@ -291,5 +265,7 @@ const commandCompletions = vscode.languages.registerCompletionItemProvider(
 
 
 
-context.subscriptions.push(xml_doc_create, xml_doc_slash,layout_slash,objectdoubledot,commandCompletions,commandCompletions);
+context.subscriptions.push(xml_doc_create, xml_doc_slash,layout_slash,commandCompletions,commandCompletions);
+
+console.log("Completions loaded");
 }

@@ -333,8 +333,7 @@ export function setCommandMenu() {
 		}
 	];
 	vscode.window.showQuickPick(options).then(option => {
-		if (!option || !option.command || option.command.length === 0) {
-			return;
+		if (!option || !option.command || option.command.length === 0) {return;
 		}
 		vscode.commands.executeCommand(option.command);
 	});

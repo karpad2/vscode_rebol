@@ -49,7 +49,7 @@ ino_fakt_def_01: context
     ;
     if mode/vrsta_datum = "" [ alert "Izaberi vrsta datuma!" return tar1 ]
     if mode/vrsta_datum = "datum fakt."
-    [ 
+    [
       append sz0 rejoin [ "AND (t1.date    BETWEEN " apjel (mode/dat_od_ios) apjel " AND " apjel (mode/dat_do_ios) apjel ") "
                           "AND (t1.faza<>'G' OR t1.faza<>'Z') " ]
       append sz1 rejoin [ "AND t2.datum<=" apjel (mode/dat_do_ios) apjel " " ]
