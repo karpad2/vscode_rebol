@@ -1,6 +1,6 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.setCommandMenu = exports.rebolCompileInConsole = exports.rebolRunInGuiConsole = exports.rebolRunInConsole = void 0;
+exports.setCommandMenu = exports.rebolCompileUpdate = exports.rebolCompileClear = exports.rebolCompileInRelease = exports.rebolCompileInGuiConsole = exports.rebolCompileInConsole = exports.rebolRunInGuiConsole = exports.rebolRunInConsole = void 0;
 const vscode = require("vscode");
 const RebolConfiguration_1 = require("./RebolConfiguration");
 const path = require("path");
@@ -137,8 +137,8 @@ function rebolCompileInConsole(fileUri) {
         return;
     }
     let ext = path.parse(filePath).ext.toLowerCase();
-    if (ext === ".rebols") {
-        //rebolsCompile(fileUri);
+    if (ext === ".sc") {
+        rebolsCompile(fileUri);
         return;
     }
     if (ext !== ".sc") {
@@ -157,69 +157,66 @@ function rebolCompileInConsole(fileUri) {
     execCommand(command, args);
 }
 exports.rebolCompileInConsole = rebolCompileInConsole;
-/*
-export function rebolCompileInGuiConsole(fileUri?: vscode.Uri) {
-    let rebolConfigs = rebolConfiguration.getInstance();
+function rebolCompileInGuiConsole(fileUri) {
+    let rebolConfigs = RebolConfiguration_1.rebolConfiguration.getInstance();
     let rebolTool = rebolConfigs.rebolToolChain;
     if (rebolTool === '') {
         vscode.window.showErrorMessage('No rebol compiler! Please configure the `rebol.rebolPath` in `settings.json`');
         return;
     }
     let filePath = getFileName(fileUri);
-    if (filePath === '') {return;}
+    if (filePath === '') {
+        return;
+    }
     let ext = path.parse(filePath).ext.toLowerCase();
     if (ext !== ".sc") {
         vscode.window.showErrorMessage("don't support " + ext + " file");
         return;
     }
-
     let buildDir = getBuildDir(filePath);
     let outName = getOutFileName(buildDir, filePath);
     let target = getTarget();
     outName = normalFile(outName);
     outName = "\"" + outName + "\"";
-
     filePath = normalFile(filePath);
     filePath = "\"" + filePath + "\"";
-
-    let command= rebolTool;
+    let command = rebolTool;
     let args = "-c -t " + target + " -o " + outName + " " + filePath;
     command = normalFile(command);
     execCommand(command, args);
 }
-
-export function rebolCompileInRelease(fileUri?: vscode.Uri) {
-    let rebolConfigs = rebolConfiguration.getInstance();
+exports.rebolCompileInGuiConsole = rebolCompileInGuiConsole;
+function rebolCompileInRelease(fileUri) {
+    let rebolConfigs = RebolConfiguration_1.rebolConfiguration.getInstance();
     let rebolTool = rebolConfigs.rebolToolChain;
     if (rebolTool === '') {
         vscode.window.showErrorMessage('No rebol compiler! Please configure the `rebol.rebolPath` in `settings.json`');
         return;
     }
     let filePath = getFileName(fileUri);
-    if (filePath === '') {return;}
+    if (filePath === '') {
+        return;
+    }
     let ext = path.parse(filePath).ext.toLowerCase();
     if (ext !== ".sc") {
         vscode.window.showErrorMessage("don't support " + ext + " file");
         return;
     }
-
     let buildDir = getBuildDir(filePath);
     let outName = getOutFileName(buildDir, filePath);
     let target = getTarget();
     outName = normalFile(outName);
     outName = "\"" + outName + "\"";
-
     filePath = normalFile(filePath);
     filePath = "\"" + filePath + "\"";
-
-    let command= rebolTool;
+    let command = rebolTool;
     let args = "-r -t " + target + " -o " + outName + " " + filePath;
     command = normalFile(command);
     execCommand(command, args);
 }
-
-export function rebolCompileClear(fileUri?: vscode.Uri) {
-    let rebolConfigs = rebolConfiguration.getInstance();
+exports.rebolCompileInRelease = rebolCompileInRelease;
+function rebolCompileClear(fileUri) {
+    let rebolConfigs = RebolConfiguration_1.rebolConfiguration.getInstance();
     let rebolTool = rebolConfigs.rebolToolChain;
     if (rebolTool === '') {
         vscode.window.showErrorMessage('No rebol compiler! Please configure the `rebol.rebolPath` in `settings.json`');
@@ -229,72 +226,111 @@ export function rebolCompileClear(fileUri?: vscode.Uri) {
     let buildDir = getBuildDir(filePath);
     buildDir = normalFile(buildDir);
     buildDir = "\"" + buildDir + "\"";
-
-    let command= rebolTool;
+    let command = rebolTool;
     let args = "clear " + buildDir;
     command = normalFile(command);
     execCommand(command, args);
 }
-
-export function rebolCompileUpdate(fileUri?: vscode.Uri) {
-    let rebolConfigs = rebolConfiguration.getInstance();
+exports.rebolCompileClear = rebolCompileClear;
+function rebolCompileUpdate(fileUri) {
+    let rebolConfigs = RebolConfiguration_1.rebolConfiguration.getInstance();
     let rebolTool = rebolConfigs.rebolToolChain;
     if (rebolTool === '') {
         vscode.window.showErrorMessage('No rebol compiler! Please configure the `rebol.rebolPath` in `settings.json`');
         return;
     }
     let filePath = getFileName(fileUri);
-    if (filePath === '') {return;}
+    if (filePath === '') {
+        return;
+    }
     let ext = path.parse(filePath).ext.toLowerCase();
     if (ext !== ".sc") {
         vscode.window.showErrorMessage("don't support " + ext + " file");
         return;
     }
-
     let buildDir = getBuildDir(filePath);
     let outName = getOutFileName(buildDir, filePath);
     outName = normalFile(outName);
     outName = "\"" + outName + "\"";
-
     filePath = normalFile(filePath);
     filePath = "\"" + filePath + "\"";
-
-    let command= rebolTool;
+    let command = rebolTool;
     let args = "-u -c -o " + outName + " " + filePath;
     command = normalFile(command);
     execCommand(command, args);
 }
-
-function rebolsCompile(fileUri?: vscode.Uri) {
-    let rebolConfigs = rebolConfiguration.getInstance();
+exports.rebolCompileUpdate = rebolCompileUpdate;
+function rebolsCompile(fileUri) {
+    let rebolConfigs = RebolConfiguration_1.rebolConfiguration.getInstance();
     let rebolTool = rebolConfigs.rebolToolChain;
     if (rebolTool === '') {
         vscode.window.showErrorMessage('No rebol compiler! Please configure the `rebol.rebolPath` in `settings.json`');
         return;
     }
     let filePath = getFileName(fileUri);
-    if (filePath === '') {return;}
+    if (filePath === '') {
+        return;
+    }
     let ext = path.parse(filePath).ext.toLowerCase();
-    if (ext !== ".rebols") {
+    if (ext !== ".sc") {
         vscode.window.showErrorMessage("don't support " + ext + " file");
         return;
     }
-
     let buildDir = getBuildDir(filePath);
     let outName = getOutFileName(buildDir, filePath);
     outName = normalFile(outName);
     outName = "\"" + outName + "\"";
-
     filePath = normalFile(filePath);
     filePath = "\"" + filePath + "\"";
-
-    let command= rebolTool;
+    let command = rebolTool;
     let args = "-r -o " + outName + " " + filePath;
     command = normalFile(command);
     execCommand(command, args);
 }
-*/
 function setCommandMenu() {
+    const options = [
+        {
+            label: 'Run Current Script',
+            description: '',
+            command: 'rebol.interpret'
+        },
+        {
+            label: 'Run Current Script in GUI Console',
+            description: '',
+            command: 'rebol.interpretGUI'
+        },
+        {
+            label: 'Compile Current Script',
+            description: '',
+            command: 'rebol.compile'
+        },
+        {
+            label: 'Compile Current Script (GUI mode)',
+            description: '',
+            command: 'rebol.compileGUI'
+        },
+        {
+            label: 'Compile Current Script (Release mode)',
+            description: '',
+            command: 'rebol.compileRelease'
+        },
+        {
+            label: 'Delete all temporary files (librebolRT, etc)',
+            description: '',
+            command: 'rebol.clear'
+        },
+        {
+            label: 'Update librebolRT and Compile Current script',
+            description: '',
+            command: 'rebol.update'
+        }
+    ];
+    vscode.window.showQuickPick(options).then(option => {
+        if (!option || !option.command || option.command.length === 0) {
+            return;
+        }
+        vscode.commands.executeCommand(option.command);
+    });
 }
 exports.setCommandMenu = setCommandMenu;
 //# sourceMappingURL=commandsProvider.js.map
