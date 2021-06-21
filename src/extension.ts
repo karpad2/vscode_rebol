@@ -657,6 +657,9 @@ export function activate(context: vscode.ExtensionContext) {
       const backdropCompletion = new vscode.CompletionItem("backdrop ");
       backdropCompletion.kind = vscode.CompletionItemKind.Function;
 
+      const moldCompletion = new vscode.CompletionItem("mold ");
+      moldCompletion.kind = vscode.CompletionItemKind.Function;
+
       
 
       
@@ -865,7 +868,8 @@ export function activate(context: vscode.ExtensionContext) {
     unviewCompletion,
     apjelCompletion,
     flashCompletion,
-    backdropCompletion
+    backdropCompletion,
+    moldCompletion
       ];
     },
   });
