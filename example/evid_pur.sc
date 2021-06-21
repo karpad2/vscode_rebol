@@ -1782,8 +1782,8 @@ evid_pur_def_01: context
     tabla/ablak:  ablak_b
     tabla_view
   ]
-  
-  ablak_arajz: func []
+  tv
+    ablak_arajz: func []
   [
     meretb: meretx - wmeret/m - 40
     ablak_a/pane: layout/offset compose
