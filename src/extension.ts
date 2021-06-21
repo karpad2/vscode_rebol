@@ -644,10 +644,7 @@ export function activate(context: vscode.ExtensionContext) {
 
       const autosizeCompletion = new vscode.CompletionItem("autosize ");
       autosizeCompletion.kind = vscode.CompletionItemKind.Function;
-
-      
-
-      
+    
 
       
       const rowCompletion = new vscode.CompletionItem("row");
