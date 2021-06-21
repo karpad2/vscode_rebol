@@ -129,6 +129,7 @@ faktura_def_01: context
       ;
       if oour0 <> row0/sif_oour
       
+      
       [
         sz1: rejoin [ "Ukupno po lokacija: " (oour0) ":" ]
         excel_com compose
