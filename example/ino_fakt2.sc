@@ -312,6 +312,7 @@ ino_fakt_def_01: context
       interior "c:#E6E6E6" "p:Solid"
       ;
       row  "h:30" interior 0 align "h:Center" font "b:1"
+      nl 0x10 ${1|,fn|} ${1|,cb 1.0|} ${1|,cg 1.0|} tv middle
       cell ("Šif.^/Part.")
       cell ("Partner")
       cell ("Valuta")

@@ -629,7 +629,7 @@ export function activate(context: vscode.ExtensionContext) {
       
       const load_pdf_fontCompletion = new vscode.CompletionItem("load_pdf_font");
       load_pdf_fontCompletion.insertText= new vscode.SnippetString(
-        'load_pdf_font "${1|,T1,TB,A1,AB,AIB|}"'
+        'load_pdf_font "${1|T1,TB,A1,AB,AIB|}"'
       )
       load_pdf_fontCompletion.kind= vscode.CompletionItemKind.Function;
 
@@ -653,7 +653,7 @@ export function activate(context: vscode.ExtensionContext) {
 
       const taCompletion = new vscode.CompletionItem("ta");
       taCompletion.insertText = new vscode.SnippetString(
-        'ta ${1|left,center,right|} () ${1|,(as-pair 25 y1)|}'
+        'ta ${1|left,center,right|} () ${1|(as-pair 25 y1)|}'
       );
       taCompletion.kind = vscode.CompletionItemKind.Function;
       
@@ -667,7 +667,7 @@ export function activate(context: vscode.ExtensionContext) {
 
       const  nlCompletion = new vscode.CompletionItem("nl");
       nlCompletion.insertText = new vscode.SnippetString(
-        'nl ${1|(as-pair 0 y1),0x10|} ${2|,fn|} ${3|,cb 1.0|} ${4|,cg 1.0|} tv middle'
+        'nl ${1|(as-pair 0 y1),0x10|} ${2|null,fn|} ${3|cb 1.0|} ${4|cg 1.0|} tv middle'
       );
       nlCompletion.kind = vscode.CompletionItemKind.Function;
       
