@@ -142,6 +142,11 @@ export function activate(context: vscode.ExtensionContext) {
       const centerCompletion = new vscode.CompletionItem("center ");
       centerCompletion.kind = vscode.CompletionItemKind.Keyword;
 
+      const middleCompletion = new vscode.CompletionItem("middle ");
+      middleCompletion.kind = vscode.CompletionItemKind.Keyword;
+
+      
+
       const leftCompletion = new vscode.CompletionItem("left ");
       leftCompletion.kind = vscode.CompletionItemKind.Keyword;
 
@@ -628,15 +633,61 @@ export function activate(context: vscode.ExtensionContext) {
 
       const formatCompletion = new vscode.CompletionItem("format");
       formatCompletion.insertText = new vscode.SnippetString(
-        'format "f:${1|###,##0.00,@|}" align "h:${2|Left,Center,Right|}"'
+        'format "f:${1|###\,##0.00,@|}" align "h:${2|Left,Center,Right|}"'
       );
       formatCompletion.kind = vscode.CompletionItemKind.Function;
+      
+      const load_pdf_fontCompletion = new vscode.CompletionItem("load_pdf_font");
+      load_pdf_fontCompletion.insertText= new vscode.SnippetString(
+        'load_pdf_font "${1|,T1,TB,A1,AB,AIB|}"'
+      )
+      load_pdf_fontCompletion.kind= vscode.CompletionItemKind.Function;
 
+      const new_pdf_pageCompletion = new vscode.CompletionItem("new_pdf_page ");
+      new_pdf_pageCompletion.kind = vscode.CompletionItemKind.Function;
+
+      const to_reg_dateCompletion = new vscode.CompletionItem("to-reg-date ");
+      to_reg_dateCompletion.kind = vscode.CompletionItemKind.Function;
+
+      const txt_szoveg_tordelCompletion = new vscode.CompletionItem("txt_szoveg_tordel ");
+      txt_szoveg_tordelCompletion.kind = vscode.CompletionItemKind.Function;
+
+      
+
+      
       const rowCompletion = new vscode.CompletionItem("row");
       rowCompletion.insertText = new vscode.SnippetString(
         'row interior 0 align "h:${2|Left,Center,Right|}" font "b:${1|0,1,2}" '
       );
       rowCompletion.kind = vscode.CompletionItemKind.Function;
+
+      const taCompletion = new vscode.CompletionItem("ta");
+      taCompletion.insertText = new vscode.SnippetString(
+        'ta ${2|Left,Center,Right|} () ${2|,(as-pair 25 y1)|}'
+      );
+      taCompletion.kind = vscode.CompletionItemKind.Function;
+      
+      
+
+      const  fnCompletion = new vscode.CompletionItem("fn");
+      fnCompletion.insertText = new vscode.SnippetString(
+        'fn "${2|A1,A2,AB|}"'
+      );
+      fnCompletion.kind = vscode.CompletionItemKind.Function;
+
+      const  nlCompletion = new vscode.CompletionItem("nl");
+      fnCompletion.insertText = new vscode.SnippetString(
+        'nl ${2|(as-pair 0 y1),0x10|} ${1|,fn|} ${1|,cb 1.0|} ${1|,cg 1.0|} tv middle'
+      );
+      nlCompletion.kind = vscode.CompletionItemKind.Function;
+      
+      const  tvCompletion = new vscode.CompletionItem("tv");
+      tvCompletion.insertText = new vscode.SnippetString(
+        'tv ${2|middle,bottom|} '
+      );
+      tvCompletion.kind = vscode.CompletionItemKind.Function;
+      
+
 
       // return all completion items as array
       return [
@@ -791,7 +842,17 @@ export function activate(context: vscode.ExtensionContext) {
     coalCompletion,
     tailCompletion,
     objectCompletion,
-    object1Completion
+    object1Completion,
+    middleCompletion,
+    load_pdf_fontCompletion,
+    new_pdf_pageCompletion,
+    to_reg_dateCompletion,
+    taCompletion,
+    taCompletion,
+    fnCompletion,
+    nlCompletion,
+    txt_szoveg_tordelCompletion,
+    tvCompletion
       ];
     },
   });
