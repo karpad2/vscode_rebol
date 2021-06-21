@@ -651,6 +651,16 @@ export function activate(context: vscode.ExtensionContext) {
       const unviewCompletion = new vscode.CompletionItem("unview ");
       unviewCompletion.kind = vscode.CompletionItemKind.Function;
 
+      const flashCompletion = new vscode.CompletionItem("flash ");
+      flashCompletion.kind = vscode.CompletionItemKind.Function;
+
+      const backdropCompletion = new vscode.CompletionItem("backdrop ");
+      backdropCompletion.kind = vscode.CompletionItemKind.Function;
+
+      
+
+      
+
       
     
 
@@ -803,7 +813,6 @@ export function activate(context: vscode.ExtensionContext) {
 		spacevCompletion,
 		originCompletion,
 		w_dateCompletion,
-		row1Completion,
 		tlabCompletion,
 		boldCompletion,
 		btnCompletion,
@@ -854,7 +863,9 @@ export function activate(context: vscode.ExtensionContext) {
     tvCompletion,
     autosizeCompletion,
     unviewCompletion,
-    apjelCompletion
+    apjelCompletion,
+    flashCompletion,
+    backdropCompletion
       ];
     },
   });

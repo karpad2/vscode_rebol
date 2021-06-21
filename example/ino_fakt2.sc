@@ -541,6 +541,7 @@ ino_fakt_def_01: context
         sz1: rejoin [ "Ukupno po " (row0/valuta) ":" ]
         excel_com compose
         [
+          
           row interior 0 font "b:1"
           ;border "p:Top" "p:Bottom" "p:Left" "p:Right" "l:Continuous" "w:0.5" "c:#000000" ; keretezve alul-felul
           format "f:@" align "h:Right"
@@ -639,6 +640,7 @@ ino_fakt_def_01: context
       sheet "naimenov_jci"
       column 80 70 30 170 250 50 30 40 70 50 35
       format "f:0" align "h:Center" "v:Center" "w:1"
+      
       interior "c:#E6E6E6" "p:Solid"
       row  "h:30" interior 0 align "h:Center" font "b:1"
       cell ("Br. prod.")
@@ -708,7 +710,9 @@ ino_fakt_def_01: context
     [
       autosize
       endsheet
-    ]    
+      
+    ]
+        
     unview/only fp1
     either i1 <> 0
     [
@@ -790,6 +794,7 @@ ino_fakt_def_01: context
     blk_fak:    none
     datum_od:   sistime/isodate
     datum_do:   sistime/isodate
+    
     ;
     tabla_blk: compose
     [
@@ -1060,6 +1065,7 @@ ino_fakt_def_01: context
       [
         mod_faktura
         hide-popup
+        
       ]
       at 40x10 h3 "Dodatni trošak:" 150x24
       at 300x10 button "Brisati" 80x24 color_m4
@@ -1312,6 +1318,7 @@ ino_fakt_def_01: context
           "SELECT SUM(uplata) AS uk_upl,SUM(upl_eur) AS ino_upl "
           "FROM upl_fakt WHERE br_fak='" faktura_sif "' "
         ]
+        
         if not empty? row3: first db 
         [ 
           uk_upl:  dec_value row3/1/1 
