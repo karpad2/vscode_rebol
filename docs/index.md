@@ -23,7 +23,7 @@ Az intellisense-t először is definiálni kell az alábbi módon
 load_pdf_fontCompletion.insertText=new vscode.SnippetString('load_pdf_font "${1|T1,TB,A1,AB,AIB|}"')
 ```
 
-Ammenyiben több változós az eset akkor a számozást folytatod
+Ammenyiben több változós az eset akkor a számozást folytatod:
 
 ```
 const taCompletion = new vscode.CompletionItem("ta");
