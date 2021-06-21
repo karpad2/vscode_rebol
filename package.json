@@ -110,10 +110,13 @@
 			"[rebol]": {
 				"editor.semanticHighlighting.enabled": true,
 				"files.encoding": "windows1250",
-				"files.autoGuessEncoding": true,
+				"files.autoGuessEncoding":false,
 				"editor.tabSize": 2,
 				"editor.insertSpaces": true,
-				"editor.detectIndentation": false
+				"editor.detectIndentation": false,
+				"editor.suggestSelection": "recentlyUsed",
+				"editor.wordBasedSuggestions": true,
+				"editor.suggestOnTriggerCharacters": true
 			}
 		}
 	},

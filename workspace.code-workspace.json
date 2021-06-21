@@ -8,8 +8,6 @@
 		"[rebol]": {
 			"editor.semanticHighlighting.enabled": true,
 			"files.encoding": "windows1250",
-              
-			"files.autoGuessEncoding": true,
             "files.trimTrailingWhitespace": true,
 			"editor.snippetSuggestions": "bottom",
 			"editor.renderIndentGuides": false,
