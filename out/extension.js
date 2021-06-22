@@ -12,64 +12,66 @@ let rebolConfigs = RebolConfiguration_1.rebolConfiguration.getInstance();
 // your extension is activated the very first time the command is executed
 function activate(context) {
     RebolSuggestion_1.completions(context);
-    const options = [
-        {
-            label: "Run Current Script",
-            description: "",
-            command: "rebol.interpret",
-        },
-        {
-            label: "Run Current Script in GUI Console",
-            description: "",
-            command: "rebol.interpretGUI",
-        },
-        {
-            label: "Compile Current Script",
-            description: "",
-            command: "rebol.compile",
-        },
-        {
-            label: "Compile Current Script (GUI mode)",
-            description: "",
-            command: "rebol.compileGUI",
-        },
-        {
-            label: "Compile Current Script (Release mode)",
-            description: "",
-            command: "rebol.compileRelease",
-        },
-        {
-            label: "Delete all temporary files (librebolRT, etc)",
-            description: "",
-            command: "rebol.clear",
-        },
-        {
-            label: "Update librebolRT and Compile Current script",
-            description: "",
-            command: "rebol.update",
-        },
+    /*const options = [
+      {
+        label: "Run Current Script",
+        description: "",
+        command: "rebol.interpret",
+      },
+      {
+        label: "Run Current Script in GUI Console",
+        description: "",
+        command: "rebol.interpretGUI",
+      },
+      {
+        label: "Compile Current Script",
+        description: "",
+        command: "rebol.compile",
+      },
+      {
+        label: "Compile Current Script (GUI mode)",
+        description: "",
+        command: "rebol.compileGUI",
+      },
+      {
+        label: "Compile Current Script (Release mode)",
+        description: "",
+        command: "rebol.compileRelease",
+      },
+      {
+        label: "Delete all temporary files (librebolRT, etc)",
+        description: "",
+        command: "rebol.clear",
+      },
+      {
+        label: "Update librebolRT and Compile Current script",
+        description: "",
+        command: "rebol.update",
+      },
     ];
-    vscode.window.showQuickPick(options).then((option) => {
-        if (!option || !option.command || option.command.length === 0) {
-            return;
-        }
-        vscode.commands.executeCommand(option.command);
-    });
-    let config = RebolConfiguration_1.rebolConfiguration.getInstance();
+    /*vscode.window.showQuickPick(options).then((option) => {
+      if (!option || !option.command || option.command.length === 0) {
+        return;
+      }
+      vscode.commands.executeCommand(option.command);
+    });*/
+    /*let config = rebolConfiguration.getInstance();
     let rebolTool = rebolConfigs.rebolToolChain;
     //context.subscriptions.push(vscode.commands.registerCommand("rebol.interpret", () => rebolRunInConsole()));
     //context.subscriptions.push(vscode.commands.registerCommand("rebol.interpretGUI", () => rebolRunInGuiConsole()));
     console.log("isIntelligence", config.isIntelligence);
     if (!config.isIntelligence) {
-        return;
+      return;
     }
+  
     console.log("rebol console path: ", config.rebolConsole);
     //let serverModule = path.join(context.asAbsolutePath("."), "server", "server.red");
     let needlog = "debug-off";
     if (config.needRlsDebug) {
-        needlog = "debug-on";
+      needlog = "debug-on";
     }
     console.log(needlog);
+  
     /*const serverOptions: vscodelc.ServerOptions = {
           run : { command: config.rebolConsole, args: [serverModule, needlog]},
           debug: { command: config.rebolConsole, args: [serverModule, "debug-on"] }
@@ -119,6 +121,8 @@ function activate(context) {
                   commandCompletion.command = { command: 'editor.action.triggerSuggest', title: 'Re-trigger completions...' };*/
             const centerCompletion = new vscode.CompletionItem("center ");
             centerCompletion.kind = vscode.CompletionItemKind.Keyword;
+            const middleCompletion = new vscode.CompletionItem("middle ");
+            middleCompletion.kind = vscode.CompletionItemKind.Keyword;
             const leftCompletion = new vscode.CompletionItem("left ");
             leftCompletion.kind = vscode.CompletionItemKind.Keyword;
             const rightCompletion = new vscode.CompletionItem("right ");
@@ -127,12 +131,23 @@ function activate(context) {
             andCompletion.kind = vscode.CompletionItemKind.Operator;
             const orCompletion = new vscode.CompletionItem("or ");
             orCompletion.kind = vscode.CompletionItemKind.Operator;
+            const ifCompletion = new vscode.CompletionItem("if ");
+            ifCompletion.kind = vscode.CompletionItemKind.Function;
+            const eitherCompletion = new vscode.CompletionItem("either ");
+            eitherCompletion.kind = vscode.CompletionItemKind.Function;
+            const objectCompletion = new vscode.CompletionItem("object ");
+            objectCompletion.kind = vscode.CompletionItemKind.Class;
+            const object1Completion = new vscode.CompletionItem("object! ");
+            object1Completion.kind = vscode.CompletionItemKind.Class;
+            const modeCompletion = new vscode.CompletionItem("mode ");
+            modeCompletion.kind = vscode.CompletionItemKind.Variable;
             const atCompletion = new vscode.CompletionItem("at ");
             atCompletion.kind = vscode.CompletionItemKind.Function;
             const textCompletion = new vscode.CompletionItem("text ");
             textCompletion.kind = vscode.CompletionItemKind.Function;
-            const edgeCompletion = new vscode.CompletionItem("edge: ");
+            const edgeCompletion = new vscode.CompletionItem("edge ");
             edgeCompletion.kind = vscode.CompletionItemKind.Keyword;
+            edgeCompletion.insertText = new vscode.SnippetString('edge: [ ]');
             const notCompletion = new vscode.CompletionItem("not ");
             notCompletion.kind = vscode.CompletionItemKind.Operator;
             const rejoinCompletion = new vscode.CompletionItem("rejoin");
@@ -164,6 +179,10 @@ function activate(context) {
             length2Completion.kind = vscode.CompletionItemKind.Function;
             const sizeCompletion = new vscode.CompletionItem("size? ");
             sizeCompletion.kind = vscode.CompletionItemKind.Function;
+            const tailqCompletion = new vscode.CompletionItem("tail? ");
+            tailqCompletion.kind = vscode.CompletionItemKind.Function;
+            const tailCompletion = new vscode.CompletionItem("tail ");
+            tailCompletion.kind = vscode.CompletionItemKind.Function;
             const size2Completion = new vscode.CompletionItem("size ");
             size2Completion.kind = vscode.CompletionItemKind.Function;
             const buttonCompletion = new vscode.CompletionItem("button ");
@@ -172,8 +191,6 @@ function activate(context) {
             composeCompletion.kind = vscode.CompletionItemKind.Function;
             const makeCompletion = new vscode.CompletionItem("make ");
             makeCompletion.kind = vscode.CompletionItemKind.Function;
-            const tailCompletion = new vscode.CompletionItem("tail ");
-            tailCompletion.kind = vscode.CompletionItemKind.Function;
             const headCompletion = new vscode.CompletionItem("head ");
             headCompletion.kind = vscode.CompletionItemKind.Function;
             const copyCompletion = new vscode.CompletionItem("copy ");
@@ -222,6 +239,8 @@ function activate(context) {
             nullCompletion.kind = vscode.CompletionItemKind.Constant;
             const string1Completion = new vscode.CompletionItem("string? ");
             string1Completion.kind = vscode.CompletionItemKind.Constant;
+            const string3Completion = new vscode.CompletionItem("string ");
+            string3Completion.kind = vscode.CompletionItemKind.Constant;
             const string2Completion = new vscode.CompletionItem("string! ");
             string2Completion.kind = vscode.CompletionItemKind.Constant;
             const assertCompletion = new vscode.CompletionItem("assert ");
@@ -272,7 +291,7 @@ function activate(context) {
             dataCompletion.kind = vscode.CompletionItemKind.Variable;
             const boldCompletion = new vscode.CompletionItem("bold ");
             boldCompletion.kind = vscode.CompletionItemKind.Value;
-            const sistimeCompletion = new vscode.CompletionItem("sistime/isodate");
+            const sistimeCompletion = new vscode.CompletionItem("sistime");
             sistimeCompletion.kind = vscode.CompletionItemKind.Function;
             const mod_fakturaCompletion = new vscode.CompletionItem("mod_faktura");
             mod_fakturaCompletion.kind = vscode.CompletionItemKind.Function;
@@ -300,6 +319,8 @@ function activate(context) {
             t_iznosCompletion.kind = vscode.CompletionItemKind.Value;
             const row1Completion = new vscode.CompletionItem("row1 ");
             row1Completion.kind = vscode.CompletionItemKind.Value;
+            const apjelCompletion = new vscode.CompletionItem("apjel ");
+            apjelCompletion.kind = vscode.CompletionItemKind.Value;
             const blkCompletion = new vscode.CompletionItem("blk ");
             blkCompletion.kind = vscode.CompletionItemKind.Value;
             const styleCompletion = new vscode.CompletionItem("style ");
@@ -348,6 +369,9 @@ function activate(context) {
             rekCompletion.kind = vscode.CompletionItemKind.Variable;
             const tlabCompletion = new vscode.CompletionItem("tlab ");
             tlabCompletion.kind = vscode.CompletionItemKind.Variable;
+            const tlab1Completion = new vscode.CompletionItem("tlab... ");
+            tlab1Completion.kind = vscode.CompletionItemKind.Variable;
+            tlab1Completion.insertText = new vscode.SnippetString('tlab $left,center,right|} "" 40x28 color_h1 color_h2');
             const keycodeCompletion = new vscode.CompletionItem("keycode ");
             keycodeCompletion.kind = vscode.CompletionItemKind.Function;
             const write_modeCompletion = new vscode.CompletionItem("write_mode ");
@@ -372,10 +396,14 @@ function activate(context) {
             minCompletion.kind = vscode.CompletionItemKind.Function;
             const uppercaseCompletion = new vscode.CompletionItem("uppercase ");
             uppercaseCompletion.kind = vscode.CompletionItemKind.Function;
+            const lowercaseCompletion = new vscode.CompletionItem("lowercase ");
+            lowercaseCompletion.kind = vscode.CompletionItemKind.Function;
             const dok_pathCompletion = new vscode.CompletionItem("dok_path ");
             dok_pathCompletion.kind = vscode.CompletionItemKind.Folder;
             const dir_specialCompletion = new vscode.CompletionItem("dir_special ");
             dir_specialCompletion.kind = vscode.CompletionItemKind.Folder;
+            const dokument_adatok_feltoltCompletion = new vscode.CompletionItem("dokument_adatok_feltolt ");
+            dokument_adatok_feltoltCompletion.kind = vscode.CompletionItemKind.Function;
             const ftp_cr_arCompletion = new vscode.CompletionItem("ftp_create_arhivpath ");
             ftp_cr_arCompletion.kind = vscode.CompletionItemKind.Function;
             const systemCompletion = new vscode.CompletionItem("system ");
@@ -388,15 +416,56 @@ function activate(context) {
             mysql_bulkCompletion.kind = vscode.CompletionItemKind.Function;
             const returnCompletion = new vscode.CompletionItem("return ");
             returnCompletion.kind = vscode.CompletionItemKind.Function;
+            const row0Completion = new vscode.CompletionItem("row0 ");
+            row0Completion.kind = vscode.CompletionItemKind.Variable;
+            const tar0Completion = new vscode.CompletionItem("tar0 ");
+            tar0Completion.kind = vscode.CompletionItemKind.Variable;
+            const tar1Completion = new vscode.CompletionItem("tar1 ");
+            tar1Completion.kind = vscode.CompletionItemKind.Variable;
+            const escapeCompletion = new vscode.CompletionItem("escape ");
+            escapeCompletion.kind = vscode.CompletionItemKind.Value;
+            const coalCompletion = new vscode.CompletionItem("coal ");
+            coalCompletion.kind = vscode.CompletionItemKind.Color;
             const funcCompletion = new vscode.CompletionItem("func");
             funcCompletion.kind = vscode.CompletionItemKind.Function;
             funcCompletion.insertText = " func \n\r [\n \t\n ]";
             const formatCompletion = new vscode.CompletionItem("format");
-            formatCompletion.insertText = new vscode.SnippetString('format "f:${1|###,##0.00,@|}" align "h:${2|Left,Center,Right|}"');
+            formatCompletion.insertText = new vscode.SnippetString('format "f:###,##0.00" align "h:${1|Left,Center,Right|}"');
             formatCompletion.kind = vscode.CompletionItemKind.Function;
+            const load_pdf_fontCompletion = new vscode.CompletionItem("load_pdf_font");
+            load_pdf_fontCompletion.insertText = new vscode.SnippetString('load_pdf_font "${1|T1,TB,A1,AB,AIB|}"');
+            load_pdf_fontCompletion.kind = vscode.CompletionItemKind.Function;
+            const new_pdf_pageCompletion = new vscode.CompletionItem("new_pdf_page ");
+            new_pdf_pageCompletion.kind = vscode.CompletionItemKind.Function;
+            const to_reg_dateCompletion = new vscode.CompletionItem("to-reg-date ");
+            to_reg_dateCompletion.kind = vscode.CompletionItemKind.Function;
+            const txt_szoveg_tordelCompletion = new vscode.CompletionItem("txt_szoveg_tordel ");
+            txt_szoveg_tordelCompletion.kind = vscode.CompletionItemKind.Function;
+            const autosizeCompletion = new vscode.CompletionItem("autosize ");
+            autosizeCompletion.kind = vscode.CompletionItemKind.Function;
+            const unviewCompletion = new vscode.CompletionItem("unview ");
+            unviewCompletion.kind = vscode.CompletionItemKind.Function;
+            const flashCompletion = new vscode.CompletionItem("flash ");
+            flashCompletion.kind = vscode.CompletionItemKind.Function;
+            const backdropCompletion = new vscode.CompletionItem("backdrop ");
+            backdropCompletion.kind = vscode.CompletionItemKind.Function;
+            const moldCompletion = new vscode.CompletionItem("mold ");
+            moldCompletion.kind = vscode.CompletionItemKind.Function;
             const rowCompletion = new vscode.CompletionItem("row");
-            rowCompletion.insertText = new vscode.SnippetString('row interior 0 align "h:${2|Left,Center,Right|}" font "b:${1|0,1,2}" ');
+            rowCompletion.insertText = new vscode.SnippetString('row interior 0 align "h:${1|Left,Center,Right|}" font "b:${2|0,1,2|}" ');
             rowCompletion.kind = vscode.CompletionItemKind.Function;
+            const taCompletion = new vscode.CompletionItem("ta");
+            taCompletion.insertText = new vscode.SnippetString('ta ${1|left,center,right|} () ${2|(as-pair 25 y1)|}');
+            taCompletion.kind = vscode.CompletionItemKind.Function;
+            const fnCompletion = new vscode.CompletionItem("fn");
+            fnCompletion.insertText = new vscode.SnippetString('fn "${1|A1,A2,AB|}"');
+            fnCompletion.kind = vscode.CompletionItemKind.Function;
+            const nlCompletion = new vscode.CompletionItem("nl");
+            nlCompletion.insertText = new vscode.SnippetString('nl ${1|(as-pair 0 y1),0x10|} ${2|fn|} ${3|cb 1.0|} ${4|cg 1.0|} tv middle');
+            nlCompletion.kind = vscode.CompletionItemKind.Function;
+            const tvCompletion = new vscode.CompletionItem("tv");
+            tvCompletion.insertText = new vscode.SnippetString('tv ${1|middle,bottom|} ');
+            tvCompletion.kind = vscode.CompletionItemKind.Function;
             // return all completion items as array
             return [
                 /*simpleCompletion,
@@ -427,7 +496,6 @@ function activate(context) {
                 buttonCompletion,
                 composeCompletion,
                 makeCompletion,
-                tailCompletion,
                 headCompletion,
                 copyCompletion,
                 fieldCompletion,
@@ -512,8 +580,8 @@ function activate(context) {
                 spacevCompletion,
                 originCompletion,
                 w_dateCompletion,
-                row1Completion,
                 tlabCompletion,
+                tlab1Completion,
                 boldCompletion,
                 btnCompletion,
                 money_formCompletion,
@@ -526,6 +594,7 @@ function activate(context) {
                 maxCompletion,
                 replaceCompletion,
                 uppercaseCompletion,
+                lowercaseCompletion,
                 dok_pathCompletion,
                 dir_specialCompletion,
                 ftp_cr_arCompletion,
@@ -535,7 +604,38 @@ function activate(context) {
                 dataCompletion,
                 evid_purCompletion,
                 mysql_bulkCompletion,
-                returnCompletion
+                returnCompletion,
+                ifCompletion,
+                modeCompletion,
+                eitherCompletion,
+                row0Completion,
+                tar0Completion,
+                row1Completion,
+                tar1Completion,
+                dokument_adatok_feltoltCompletion,
+                tailqCompletion,
+                escapeCompletion,
+                coalCompletion,
+                tailCompletion,
+                objectCompletion,
+                object1Completion,
+                middleCompletion,
+                load_pdf_fontCompletion,
+                new_pdf_pageCompletion,
+                to_reg_dateCompletion,
+                taCompletion,
+                taCompletion,
+                fnCompletion,
+                nlCompletion,
+                txt_szoveg_tordelCompletion,
+                tvCompletion,
+                autosizeCompletion,
+                unviewCompletion,
+                apjelCompletion,
+                flashCompletion,
+                backdropCompletion,
+                moldCompletion,
+                string3Completion
             ];
         },
     });
@@ -652,18 +752,20 @@ function activate(context) {
             if (!linePrefix.endsWith(":")) {
                 return undefined;
             }
-            const uniqueCompletion = new vscode.CompletionItem("unique");
+            const uniqueCompletion = new vscode.CompletionItem("unique ");
             uniqueCompletion.kind = vscode.CompletionItemKind.Function;
-            const roundtoCompletion = new vscode.CompletionItem("round/to");
+            const roundtoCompletion = new vscode.CompletionItem("round/to ");
             roundtoCompletion.kind = vscode.CompletionItemKind.Function;
-            const noneCompletion = new vscode.CompletionItem("none");
+            const noneCompletion = new vscode.CompletionItem("none ");
             noneCompletion.kind = vscode.CompletionItemKind.Constant;
             const makeCompletion = new vscode.CompletionItem("make ");
             makeCompletion.kind = vscode.CompletionItemKind.Function;
-            const trueCompletion = new vscode.CompletionItem("true");
+            const trueCompletion = new vscode.CompletionItem("true ");
             trueCompletion.kind = vscode.CompletionItemKind.Constant;
-            const falseCompletion = new vscode.CompletionItem("false");
+            const falseCompletion = new vscode.CompletionItem("false ");
             falseCompletion.kind = vscode.CompletionItemKind.Constant;
+            const copyCompletion = new vscode.CompletionItem("copy ");
+            copyCompletion.kind = vscode.CompletionItemKind.Function;
             const funcCompletion = new vscode.CompletionItem("func");
             funcCompletion.kind = vscode.CompletionItemKind.Function;
             funcCompletion.insertText = " func \n\r [\n \t\n ]";
@@ -677,6 +779,7 @@ function activate(context) {
                 roundtoCompletion,
                 funcCompletion,
                 makeCompletion,
+                copyCompletion
             ];
         },
     }, ":" // triggered whenever a '/' is being typed
