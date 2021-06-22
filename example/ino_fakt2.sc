@@ -1412,6 +1412,7 @@ ino_fakt_def_01: context
     p2: 0x0
     ; primalac:
     pnev1: ""
+    
     ;
     god0: copy/part rek/date 4
     if rek/user <> "0"

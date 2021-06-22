@@ -181,8 +181,11 @@ export function activate(context: vscode.ExtensionContext) {
       const textCompletion = new vscode.CompletionItem("text ");
       textCompletion.kind = vscode.CompletionItemKind.Function;
 
-      const edgeCompletion = new vscode.CompletionItem("edge: ");
+      const edgeCompletion = new vscode.CompletionItem("edge ");
       edgeCompletion.kind = vscode.CompletionItemKind.Keyword;
+      edgeCompletion.insertText= new vscode.SnippetString(
+        'edge: [ ]'
+      )
 
 	    const notCompletion = new vscode.CompletionItem("not ");
       notCompletion.kind = vscode.CompletionItemKind.Operator;
@@ -237,7 +240,6 @@ export function activate(context: vscode.ExtensionContext) {
       tailCompletion.kind = vscode.CompletionItemKind.Function;
 
       
-
       const size2Completion = new vscode.CompletionItem("size ");
       size2Completion.kind = vscode.CompletionItemKind.Function;
 
@@ -322,6 +324,9 @@ export function activate(context: vscode.ExtensionContext) {
 
       const string1Completion = new vscode.CompletionItem("string? ");
       string1Completion.kind = vscode.CompletionItemKind.Constant;
+
+      const string3Completion = new vscode.CompletionItem("string ");
+      string3Completion.kind = vscode.CompletionItemKind.Constant;
 
       const string2Completion = new vscode.CompletionItem("string! ");
       string2Completion.kind = vscode.CompletionItemKind.Constant;
@@ -549,7 +554,6 @@ export function activate(context: vscode.ExtensionContext) {
       keycodeCompletion.kind = vscode.CompletionItemKind.Function;
 
       
-
       const write_modeCompletion = new vscode.CompletionItem("write_mode ");
       write_modeCompletion.kind = vscode.CompletionItemKind.Variable;
 
@@ -618,7 +622,6 @@ export function activate(context: vscode.ExtensionContext) {
       tar0Completion.kind = vscode.CompletionItemKind.Variable;
 
       
-
       const tar1Completion = new vscode.CompletionItem("tar1 ");
       tar1Completion.kind = vscode.CompletionItemKind.Variable;
       
@@ -667,13 +670,6 @@ export function activate(context: vscode.ExtensionContext) {
 
       const moldCompletion = new vscode.CompletionItem("mold ");
       moldCompletion.kind = vscode.CompletionItemKind.Function;
-
-      
-
-      
-
-      
-    
 
       
       const rowCompletion = new vscode.CompletionItem("row");
@@ -878,7 +874,8 @@ export function activate(context: vscode.ExtensionContext) {
     apjelCompletion,
     flashCompletion,
     backdropCompletion,
-    moldCompletion
+    moldCompletion,
+    string3Completion
       ];
     },
   });
