@@ -19,6 +19,9 @@ It is also a language for representing data and metadata. It provides a consiste
 Rebol has been intentionally kept small and lightweight.
 It only takes a few seconds to download, requires no special libraries, and includes hundreds of functions, dozens of data-types, built-in help, multiple Internet protocols, graphics, sound, and much more.
 
+
+Github actions auto updates the version of the extension from now. 
+
 ## Quick Start
 
 ### 1. Install the extension
