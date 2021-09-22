@@ -1,0 +1,513 @@
+[
+    {
+        "completion":"load_pdf_font",
+        "insertText":"${1|T1,TB,A1,AB,AIB|}",
+        "kind":"function"
+    },
+    
+   
+    {
+        "completion":"if",
+        "insertText":"if ",
+        "kind":"function"
+    },
+    {
+        "completion":"either",
+        "insertText":"either ",
+        "kind":"function"
+    },
+    
+   
+    {
+        "completion":"at",
+        "insertText":"at ",
+        "kind":"function"
+    },
+    {
+        "completion":"text",
+        "insertText":"text ",
+        "kind":"function"
+    },
+    
+    {
+        "completion":"rejoin",
+        "insertText":"rejoin [ ] ",
+        "kind":"function"
+    },
+    
+    {
+        "completion":"exit",
+        "insertText":"exit ",
+        "kind":"function"
+    },
+    
+    
+    {
+        "completion":"find",
+        "insertText":"find ",
+        "kind":"function"
+    },
+    {
+        "completion":"parse",
+        "insertText":"parse ",
+        "kind":"function"
+    },
+    {
+        "completion":"append",
+        "insertText":"append ",
+        "kind":"function"
+    },
+    {
+        "completion":"empty?",
+        "insertText":"empty? ",
+        "kind":"function"
+    },
+    {
+        "completion":"length?",
+        "insertText":"length? ",
+        "kind":"function"
+    },
+    {
+        "completion":"length",
+        "insertText":"length ",
+        "kind":"function"
+    },
+    {
+        "completion":"size?",
+        "insertText":"size? ",
+        "kind":"function"
+    },
+    {
+        "completion":"size",
+        "insertText":"size ",
+        "kind":"function"
+    },
+    {
+        "completion":"tail?",
+        "insertText":"tail? ",
+        "kind":"function"
+    },
+    {
+        "completion":"tail",
+        "insertText":"tail ",
+        "kind":"function"
+    },
+    
+    {
+        "completion":"compose",
+        "insertText":"compose ",
+        "kind":"function"
+    },
+    {
+        "completion":"make",
+        "insertText":"make ",
+        "kind":"function"
+    },
+    {
+        "completion":"head",
+        "insertText":"head ",
+        "kind":"function"
+    },
+    {
+        "completion":"copy",
+        "insertText":"copy ",
+        "kind":"function"
+    },
+    
+    {
+        "completion":"align",
+        "insertText":"align ",
+        "kind":"field"
+    },
+    {
+        "completion":"merge",
+        "insertText":"merge ",
+        "kind":"function"
+    },
+    {
+        "completion":"to-integer",
+        "insertText":"to-integer ",
+        "kind":"function"
+    },
+    {
+        "completion":"endsheet",
+        "insertText":"endsheet ",
+        "kind":"function"
+    },
+    
+    {
+        "completion":"next",
+        "insertText":"next ",
+        "kind":"function"
+    },
+    {
+        "completion":"with",
+        "insertText":"with []",
+        "kind":"function"
+    },
+    {
+        "completion":"hide-popup",
+        "insertText":"hide-popup ",
+        "kind":"function"
+    },
+    {
+        "completion":"write_xml_doc",
+        "insertText":"write_xml_doc ",
+        "kind":"function"
+    },
+    {
+        "completion":"alias",
+        "insertText":"alias ",
+        "kind":"function"
+    },
+    {
+        "completion":"cell (\"\")",
+        "insertText":"cell (\"\") ",
+        "kind":"function"
+    },
+    {
+        "completion":"cell ()",
+        "insertText":"cell () ",
+        "kind":"function"
+    },
+    {
+        "completion":"unique",
+        "insertText":"unique ",
+        "kind":"function"
+    },
+    {
+        "completion":"as",
+        "insertText":"as ",
+        "kind":"function"
+    },
+    {
+        "completion":"declare",
+        "insertText":"declare ",
+        "kind":"function"
+    },
+    {
+        "completion":"case",
+        "insertText":"case ",
+        "kind":"method"
+    },
+    {
+        "completion":"continue",
+        "insertText":"continue ",
+        "kind":"function"
+    },
+    {
+        "completion":"break",
+        "insertText":"break ",
+        "kind":"function"
+    },
+    {
+        "completion":"break",
+        "insertText":"break ",
+        "kind":"function"
+    },
+   
+    {
+        "completion":"string",
+        "insertText":"string ",
+        "kind":"function"
+    },
+    {
+        "completion":"string!",
+        "insertText":"string! ",
+        "kind":"function"
+    },
+    {
+        "completion":"string?",
+        "insertText":"string? ",
+        "kind":"function"
+    },
+    {
+        "completion":"assert",
+        "insertText":"assert ",
+        "kind":"function"
+    },
+    {
+        "completion":"select",
+        "insertText":"select ",
+        "kind":"function"
+    },
+    
+   
+    {
+        "completion":"sistime",
+        "insertText":"sistime ",
+        "kind":"function"
+    },
+    {
+        "completion":"mod_faktura",
+        "insertText":"mod_faktura ",
+        "kind":"function"
+    },
+    {
+        "completion":"layout/offset",
+        "insertText":"layout/offset ",
+        "kind":"function"
+    },
+    {
+        "completion":"program_nazad",
+        "insertText":"program_nazad ",
+        "kind":"function"
+    },
+    {
+        "completion":"tabla_view",
+        "insertText":"tabla_view ",
+        "kind":"function"
+    },
+    {
+        "completion":"field",
+        "insertText":"field ",
+        "kind":"function"
+    },
+    {
+        "completion":"insert",
+        "insertText":"insert ",
+        "kind":"function"
+    },
+    {
+        "completion":"reduce",
+        "insertText":"reduce ",
+        "kind":"function"
+    },
+    {
+        "completion":"check",
+        "insertText":"check ",
+        "kind":"function"
+    },
+    {
+        "completion":"style",
+        "insertText":"style ",
+        "kind":"function"
+    },
+    {
+        "completion":"arrow",
+        "insertText":"arrow ",
+        "kind":"function"
+    },
+    {
+        "completion":"replace",
+        "insertText":"replace ",
+        "kind":"function"
+    },
+    {
+        "completion":"focus",
+        "insertText":"focus ",
+        "kind":"function"
+    },
+    {
+        "completion":"get_rekord",
+        "insertText":"get_rekord ",
+        "kind":"function"
+    },
+    {
+        "completion":"backtile",
+        "insertText":"backtile ",
+        "kind":"function"
+    },
+    {
+        "completion":"remove",
+        "insertText":"remove ",
+        "kind":"function"
+    },
+    {
+        "completion":"alert \"\"",
+        "insertText":"alert \"\" ",
+        "kind":"function"
+    },
+    {
+        "completion":"alert",
+        "insertText":"alert ",
+        "kind":"function"
+    },
+    {
+        "completion":"show",
+        "insertText":"show ",
+        "kind":"function"
+    },
+    {
+        "completion":"parse/all",
+        "insertText":"parse/all ",
+        "kind":"function"
+    },
+    {
+        "completion":"set",
+        "insertText":"set ",
+        "kind":"function"
+    },
+    {
+        "completion":"ablak_brajz",
+        "insertText":"ablak_brajz ",
+        "kind":"function"
+    },
+    {
+        "completion":"main_window/user-data",
+        "insertText":"main_window/user-data ",
+        "kind":"function"
+    },
+    {
+        "completion":"faktura_kiiras",
+        "insertText":"faktura_kiiras ",
+        "kind":"function"
+    },
+    {
+        "completion":"ablak_cezar",
+        "insertText":"ablak_cezar ",
+        "kind":"function"
+    },
+    {
+        "completion":"sort",
+        "insertText":"sort ",
+        "kind":"function"
+    },
+    {
+        "completion":"keycode",
+        "insertText":"keycode ",
+        "kind":"function"
+    },
+    {
+        "completion":"money_form",
+        "insertText":"money_form ",
+        "kind":"function"
+    },
+    {
+        "completion":"clear",
+        "insertText":"clear ",
+        "kind":"function"
+    },
+    {
+        "completion":"pair!",
+        "insertText":"pair! ",
+        "kind":"function"
+    },
+    {
+        "completion":"max",
+        "insertText":"max ",
+        "kind":"function"
+    },
+    {
+        "completion":"min",
+        "insertText":"min ",
+        "kind":"function"
+    },
+    {
+        "completion":"uppercase",
+        "insertText":"uppercase ",
+        "kind":"function"
+    },
+    {
+        "completion":"lowercase",
+        "insertText":"lowercase ",
+        "kind":"function"
+    },
+    {
+        "completion":"dokument_adatok_feltolt",
+        "insertText":"dokument_adatok_feltolt ",
+        "kind":"function"
+    },
+    {
+        "completion":"ftp_create_arhivpath",
+        "insertText":"ftp_create_arhivpath ",
+        "kind":"function"
+    },
+    {
+        "completion":"as-pair",
+        "insertText":"as-pair ",
+        "kind":"function"
+    },
+    {
+        "completion":"evid_pur",
+        "insertText":"evid_pur ",
+        "kind":"function"
+    },
+    {
+        "completion":"mysql_bulk",
+        "insertText":"mysql_bulk ",
+        "kind":"function"
+    },
+    {
+        "completion":"return",
+        "insertText":"return ",
+        "kind":"function"
+    },
+    {
+        "completion":"func",
+        "insertText":" func \n\r [\n \t\n ] ",
+        "kind":"function"
+    },
+    {
+        "completion":"format",
+        "insertText":"format \"f:###,##0.00\" align \"h:${1|Left,Center,Right|}\" ",
+        "kind":"function"
+    },
+    {
+        "completion":"new_pdf_page",
+        "insertText":"new_pdf_page ",
+        "kind":"function"
+    },
+    {
+        "completion":"to-reg-date",
+        "insertText":"to-reg-date ",
+        "kind":"function"
+    },
+    {
+        "completion":"txt_szoveg_tordel",
+        "insertText":"txt_szoveg_tordel ",
+        "kind":"function"
+    },
+    {
+        "completion":"autosize",
+        "insertText":"autosize ",
+        "kind":"function"
+    },
+    {
+        "completion":"unview",
+        "insertText":"unview ",
+        "kind":"function"
+    },
+    {
+        "completion":"flash",
+        "insertText":"flash ",
+        "kind":"function"
+    },
+    {
+        "completion":"backdrop",
+        "insertText":"backdrop ",
+        "kind":"function"
+    },
+    {
+        "completion":"mold",
+        "insertText":"mold ",
+        "kind":"function"
+    },
+    {
+        "completion":"row",
+        "insertText":"row interior 0 align \"h:${1|Left,Center,Right|}\" font \"b:${2|0,1,2|}\" ",
+        "kind":"function"
+    },
+    {
+        "completion":"ta",
+        "insertText":"ta ${1|left,center,right|} () ${2|(as-pair 25 y1)|} ",
+        "kind":"function"
+    },
+    {
+        "completion":"fn",
+        "insertText":"fn \"${1|A1,A2,AB|}\"",
+        "kind":"function"
+    },
+    {
+        "completion":"nl",
+        "insertText":"nl ${1|(as-pair 0 y1),0x10|} ${2|fn|} ${3|cb 1.0|} ${4|cg 1.0|} tv middle",
+        "kind":"function"
+    },
+    {
+        "completion":"tv",
+        "insertText":"tv ${1|middle,bottom|} ",
+        "kind":"function"
+    }
+
+
+]

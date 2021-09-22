@@ -1,0 +1,12 @@
+[
+    {
+        "completion":"dok_path",
+        "insertText":"dok_path ",
+        "kind":"folder"
+    },
+    {
+        "completion":"dir_special",
+        "insertText":"dir_special ",
+        "kind":"folder"
+    }
+]

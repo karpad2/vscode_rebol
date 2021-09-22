@@ -1,0 +1,112 @@
+[
+    {
+        "completion":"color:",
+        "insertText":"color: ",
+        "kind":"variable"
+    },
+    {
+        "completion":"size:",
+        "insertText":"size: ",
+        "kind":"variable"
+    },
+    {
+        "completion":"font:",
+        "insertText":"font: ",
+        "kind":"variable"
+    },
+    {
+        "completion":"para:",
+        "insertText":"para: ",
+        "kind":"variable"
+    },
+    {
+        "completion":"space:",
+        "insertText":"space: ",
+        "kind":"variable"
+    },
+    {
+        "completion":"origin:",
+        "insertText":"origin: ",
+        "kind":"variable"
+    },
+    {
+        "completion":"data:",
+        "insertText":"data: ",
+        "kind":"variable"
+    },
+    {
+        "completion":"data:",
+        "insertText":"data: ",
+        "kind":"variable"
+    },
+    {
+        "completion":"retval",
+        "insertText":"retval ",
+        "kind":"variable"
+    },
+    {
+        "completion":"panel",
+        "insertText":"panel ",
+        "kind":"variable"
+    },
+    {
+        "completion":"face",
+        "insertText":"face ",
+        "kind":"variable"
+    },
+    {
+        "completion":"info",
+        "insertText":"info ",
+        "kind":"variable"
+    },
+    {
+        "completion":"rek",
+        "insertText":"rek ",
+        "kind":"variable"
+    },
+    {
+        "completion":"tlab",
+        "insertText":"tlab ",
+        "kind":"variable"
+    },
+    {
+        "completion":"tlab...",
+        "insertText":"tlab $left,center,right|} \"\" 40x28 color_h1 color_h2",
+        "kind":"variable"
+    },
+    {
+        "completion":"write_mode",
+        "insertText":"write_mode ",
+        "kind":"variable"
+    },
+    {
+        "completion":"user-data",
+        "insertText":"user-data ",
+        "kind":"variable"
+    },
+    {
+        "completion":"w_date",
+        "insertText":"w_date ",
+        "kind":"variable"
+    },
+    {
+        "completion":"row0",
+        "insertText":"row0 ",
+        "kind":"variable"
+    },
+    {
+        "completion":"tar0",
+        "insertText":"tar0 ",
+        "kind":"variable"
+    },
+    {
+        "completion":"tar1",
+        "insertText":"tar1 ",
+        "kind":"variable"
+    },
+    {
+        "completion":"mode",
+        "insertText":"mode ",
+        "kind":"variable"
+    }
+]

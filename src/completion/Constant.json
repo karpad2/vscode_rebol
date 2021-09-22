@@ -1,0 +1,23 @@
+[
+    
+        {
+            "completion":"none",
+            "insertText":"none ",
+            "kind":"constant"
+        },
+        {
+            "completion":"true",
+            "insertText":"true ",
+            "kind":"constant"
+        },
+        {
+            "completion":"false",
+            "insertText":"false ",
+            "kind":"constant"
+        },
+        {
+            "completion":"null",
+            "insertText":"null ",
+            "kind":"constant"
+        }
+]

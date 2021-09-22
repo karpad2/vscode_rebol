@@ -1,0 +1,48 @@
+[
+    {
+        "completion":"korisnik",
+        "insertText":"korisnik ",
+        "kind":"value"
+    },
+    {
+        "completion":"t_nev",
+        "insertText":"t_nev ",
+        "kind":"value"
+    },
+    {
+        "completion":"t_date",
+        "insertText":"t_date ",
+        "kind":"value"
+    },
+    {
+        "completion":"t_iznos",
+        "insertText":"t_iznos ",
+        "kind":"value"
+    },
+    {
+        "completion":"row1",
+        "insertText":"row1 ",
+        "kind":"value"
+    },
+    {
+        "completion":"apjel",
+        "insertText":"apjel ",
+        "kind":"value"
+    },
+    {
+        "completion":"blk",
+        "insertText":"blk ",
+        "kind":"value"
+    },
+    {
+        "completion":"bold",
+        "insertText":"bold ",
+        "kind":"value"
+    },
+    {
+        "completion":"escape",
+        "insertText":"escape ",
+        "kind":"value"
+    }
+
+]

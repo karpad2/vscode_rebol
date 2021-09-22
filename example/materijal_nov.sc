@@ -7,6 +7,7 @@
 materijal_nov_01: context
 [
   klas_oblast: none ; oblast: Mat
+  
   klas_tar:    none ; teljes klasifikacios tar
   klas_mbr:    none ; kezdo rekord sorszama
   filter_rek:  none ; filterezes a rekordnal
@@ -37,9 +38,10 @@ materijal_nov_01: context
   g_bris_list: 
   [
     [ "A+B" "B" "I" "" ]
-    [ "A+B - aktivni i predv.bris (sa stanjem)" "B - predv.bris (bez stanja)" "I - neaktivni" "" ]
+    [ "A+B - aktivni i predv.bris (sa stanjem) "  "B - predv.bris (bez stanja)" "I - neaktivni" "" ]
   ]
-  ;
+  ; 
+  
   osvezi_nazmat_druga_tabela: func [ /local fp1 ]
   [
     fp1: flash "Obrada podataka..."

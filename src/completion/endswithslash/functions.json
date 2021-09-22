@@ -1,0 +1,67 @@
+[
+    {
+        "completion":"",
+        "insertText":"",
+        "kind":"method"
+    },
+    {
+        "completion":"skip",
+        "insertText":"skip ",
+        "kind":"method"
+    },
+    {
+        "completion":"only",
+        "insertText":"only ",
+        "kind":"method"
+    },
+    {
+        "completion":"all",
+        "insertText":"all ",
+        "kind":"method"
+    },
+    {
+        "completion":"part",
+        "insertText":"part ",
+        "kind":"method"
+    },
+    {
+        "completion":"offset",
+        "insertText":"offset ",
+        "kind":"method"
+    },
+    {
+        "completion":"filter",
+        "insertText":"filter ",
+        "kind":"method"
+    },
+    {
+        "completion":"file",
+        "insertText":"file ",
+        "kind":"method"
+    },
+    {
+        "completion":"keep",
+        "insertText":"keep ",
+        "kind":"method"
+    },
+    {
+        "completion":"local",
+        "insertText":"local ",
+        "kind":"method"
+    },
+    {
+        "completion":"first",
+        "insertText":"first ",
+        "kind":"method"
+    },
+    {
+        "completion":"last",
+        "insertText":"last ",
+        "kind":"method"
+    },
+    {
+        "completion":"size",
+        "insertText":"size ",
+        "kind":"method"
+    }
+]

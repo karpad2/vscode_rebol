@@ -1,0 +1,267 @@
+[
+    {
+        "completion":"text",
+        "insertText":"text ",
+        "kind":"variable"
+    },
+    {
+        "completion":"data",
+        "insertText":"data ",
+        "kind":"variable"
+    },
+    {
+        "completion":"confirm",
+        "insertText":"confirm ",
+        "kind":"variable"
+    },
+    {
+        "completion":"faza",
+        "insertText":"faza ",
+        "kind":"variable"
+    },
+    {
+        "completion":"tip_fak",
+        "insertText":"tip_fak ",
+        "kind":"variable"
+    },
+    {
+        "completion":"veza_dok",
+        "insertText":"veza_dok ",
+        "kind":"variable"
+    },
+    {
+        "completion":"datum",
+        "insertText":"datum ",
+        "kind":"variable"
+    },
+    {
+        "completion":"rok",
+        "insertText":"rok ",
+        "kind":"variable"
+    },
+    {
+        "completion":"value",
+        "insertText":"value ",
+        "kind":"variable"
+    },
+    {
+        "completion":"filter",
+        "insertText":"filter ",
+        "kind":"variable"
+    },
+    {
+        "completion":"sif_part",
+        "insertText":"sif_part ",
+        "kind":"variable"
+    },
+    {
+        "completion":"sif_fak",
+        "insertText":"sif_fak ",
+        "kind":"variable"
+    },
+    {
+        "completion":"sif_mag",
+        "insertText":"sif_mag ",
+        "kind":"variable"
+    },
+    {
+        "completion":"datum_dok",
+        "insertText":"datum_dok ",
+        "kind":"variable"
+    },
+    {
+        "completion":"dat_val",
+        "insertText":"dat_val ",
+        "kind":"variable"
+    },
+    {
+        "completion":"namena",
+        "insertText":"namena ",
+        "kind":"variable"
+    },
+    {
+        "completion":"opis",
+        "insertText":"opis ",
+        "kind":"variable"
+    },
+    {
+        "completion":"dat_insert",
+        "insertText":"dat_insert ",
+        "kind":"variable"
+    },
+    {
+        "completion":"kor_insert",
+        "insertText":"kor_insert ",
+        "kind":"variable"
+    },
+    {
+        "completion":"dat_modif",
+        "insertText":"dat_modif ",
+        "kind":"variable"
+    },
+    {
+        "completion":"kor_modif",
+        "insertText":"kor_modif ",
+        "kind":"variable"
+    },
+    {
+        "completion":"uplata",
+        "insertText":"uplata ",
+        "kind":"variable"
+    },
+    {
+        "completion":"user-data",
+        "insertText":"user-data ",
+        "kind":"variable"
+    },
+    {
+        "completion":"title",
+        "insertText":"title ",
+        "kind":"variable"
+    },
+    {
+        "completion":"default",
+        "insertText":"default ",
+        "kind":"variable"
+    },
+    {
+        "completion":"name",
+        "insertText":"lista ",
+        "kind":"variable"
+    },
+    {
+        "completion":"nevek",
+        "insertText":"nevek ",
+        "kind":"variable"
+    },
+    {
+        "completion":"oszlop",
+        "insertText":"oszlop ",
+        "kind":"variable"
+    },
+    {
+        "completion":"tipus",
+        "insertText":"tipus ",
+        "kind":"variable"
+    },
+    {
+        "completion":"order",
+        "insertText":"order ",
+        "kind":"variable"
+    },
+    {
+        "completion":"index",
+        "insertText":"index ",
+        "kind":"variable"
+    },
+    {
+        "completion":"pane",
+        "insertText":"pane ",
+        "kind":"variable"
+    },
+    {
+        "completion":"arhiv_map",
+        "insertText":"arhiv_map ",
+        "kind":"variable"
+    },
+    {
+        "completion":"file_tips",
+        "insertText":"file_tips ",
+        "kind":"variable"
+    },
+    {
+        "completion":"network",
+        "insertText":"network ",
+        "kind":"variable"
+    },
+    {
+        "completion":"host",
+        "insertText":"host ",
+        "kind":"variable"
+    },
+    {
+        "completion":"br_ugov",
+        "insertText":"br_ugov ",
+        "kind":"variable"
+    },
+    {
+        "completion":"serija",
+        "insertText":"serija ",
+        "kind":"variable"
+    },
+    {
+        "completion":"deep",
+        "insertText":"deep ",
+        "kind":"variable"
+    },
+    {
+        "completion":"cena",
+        "insertText":"cena ",
+        "kind":"variable"
+    },
+    {
+        "completion":"host-address",
+        "insertText":"host-address ",
+        "kind":"variable"
+    },
+    {
+        "completion":"dok_path",
+        "insertText":"dok_path ",
+        "kind":"file"
+    },
+    {
+        "completion":"br_dok",
+        "insertText":"br_dok ",
+        "kind":"variable"
+    },
+    {
+        "completion":"datum_dok",
+        "insertText":"datum_dok ",
+        "kind":"variable"
+    },
+    {
+        "completion":"sif_mag",
+        "insertText":"sif_mag ",
+        "kind":"variable"
+    },
+    {
+        "completion":"br_dok",
+        "insertText":"br_dok ",
+        "kind":"variable"
+    },
+    {
+        "completion":"param",
+        "insertText":"param ",
+        "kind":"variable"
+    },
+    {
+        "completion":"iznos",
+        "insertText":"iznos ",
+        "kind":"variable"
+    },
+    {
+        "completion":"ukupno",
+        "insertText":"ukupno ",
+        "kind":"variable"
+    },
+    {
+        "completion":"osn_por",
+        "insertText":"osn_por ",
+        "kind":"variable"
+    },
+    {
+        "completion":"troskovi",
+        "insertText":"troskovi ",
+        "kind":"variable"
+    },
+    {
+        "completion":"rabat",
+        "insertText":"rabat ",
+        "kind":"variable"
+    },
+    {
+        "completion":"size",
+        "insertText":"size ",
+        "kind":"variable"
+    }
+]

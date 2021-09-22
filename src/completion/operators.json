@@ -1,0 +1,33 @@
+[
+    {
+        "completion":"btn",
+        "insertText":"btn ",
+        "kind":"operator"
+    },
+    {
+        "completion":"and",
+        "insertText":"and ",
+        "kind":"operator"
+    },
+    {
+        "completion":"or",
+        "insertText":"or ",
+        "kind":"operator"
+    },
+    {
+        "completion":"not <>",
+        "insertText":"<> ",
+        "kind":"operator"
+    },
+    {
+        "completion":"<>",
+        "insertText":"<> ",
+        "kind":"operator"
+    },
+    {
+        "completion":"not",
+        "insertText":"not ",
+        "kind":"operator"
+    }
+   
+]

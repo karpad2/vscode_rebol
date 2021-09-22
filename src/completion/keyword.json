@@ -1,0 +1,37 @@
+[
+    {
+        "completion":"center",
+        "insertText":"center ",
+        "kind":"keyword"
+    },
+    {
+        "completion":"middle",
+        "insertText":"middle ",
+        "kind":"keyword"
+    },
+    {
+        "completion":"left",
+        "insertText":"left ",
+        "kind":"keyword"
+    },
+    {
+        "completion":"edge",
+        "insertText":"edge: [ ] ",
+        "kind":"keyword"
+    },
+    {
+        "completion":"button",
+        "insertText":"button ",
+        "kind":"keyword"
+    },
+    {
+        "completion":"first",
+        "insertText":"first ",
+        "kind":"keyword"
+    },
+    {
+        "completion":"right",
+        "insertText":"right ",
+        "kind":"keyword"
+    }
+]

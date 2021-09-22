@@ -28,9 +28,10 @@ evid_pur_def_01: context
     sz0: copy prek/br_ugov
     if find sz0 "-"
     [
+      
       sz0: copy/part at sz0 1 (find sz0 "-")
     ]
-    mysql_cmd [ "SELECT  br_fak FROM faktura2 WHERE br_fak LIKE '" sz0 "%' ORDER BY br_fak DESC LIMIT 1" ]
+    mysql_cmd [ "SELECT a br_fak FROM faktura2 WHERE br_fak LIKE '" sz0 "%' ORDER BY br_fak DESC LIMIT 1" ]
     row0: get_rekord first db
     ;
      

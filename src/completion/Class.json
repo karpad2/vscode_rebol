@@ -1,0 +1,32 @@
+[
+    {
+        "completion":"system",
+        "insertText":"system ",
+        "kind":"class"
+    },
+    {
+        "completion":"object",
+        "insertText":"object ",
+        "kind":"class"
+    },
+    {
+        "completion":"block!",
+        "insertText":"block! ",
+        "kind":"class"
+    },
+    {
+        "completion":"object!",
+        "insertText":"object! ",
+        "kind":"class"
+    },
+    {
+        "completion":"db",
+        "insertText":"db ",
+        "kind":"class"
+    },
+    {
+        "completion":"context",
+        "insertText":"context ",
+        "kind":"class"
+    }
+]

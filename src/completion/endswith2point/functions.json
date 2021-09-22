@@ -1,0 +1,32 @@
+[
+    {
+        "completion":"unique",
+        "insertText":"unique ",
+        "kind":"function"
+    },
+    {
+        "completion":"round/to",
+        "insertText":"round/to ",
+        "kind":"function"
+    },
+    {
+        "completion":"make",
+        "insertText":"make ",
+        "kind":"function"
+    },
+    {
+        "completion":"copy",
+        "insertText":"copy ",
+        "kind":"function"
+    },
+    {
+        "completion":"func",
+        "insertText":" func \n\r [\n \t\n ]",
+        "kind":"function"
+    },
+    {
+        "completion":"skip",
+        "insertText":"skip",
+        "kind":"method"
+    }
+]

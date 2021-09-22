@@ -1,3 +1,20 @@
+<p>
+  <h1 align="center">Rebol</h1>
+</p>
+
+<p align="center">
+  <a href="https://github.com/karpad2/vscode_rebol/actions/workflows/deploy.yml">
+    <img src="https://vsmarketplacebadge.apphb.com/downloads/karpad2.rebol.svg">
+  </a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=karpad2.rebol">
+    <img src="https://vsmarketplacebadge.apphb.com/installs/karpad2.rebol.svg">
+  </a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=karpad2.rebol">
+    <img src="https://vsmarketplacebadge.apphb.com/version/karpad2.rebol.svg">
+  </a>
+  <br>
+</p>
+
 # VSCode extension for [Rebol](http://rebol.com/)
 
 An extension with rich support for the [Rebol language](http://rebol.com/), with features including the following and more:
@@ -35,4 +52,4 @@ Github actions auto updates the version of the extension from now.
 ​                
 ## License
 
-[MIT License](https://raw.githubusercontent.com/karpad2/vscode_rebol/master/LICENSE)
+[Apache License](https://raw.githubusercontent.com/karpad2/vscode_rebol/master/LICENSE)
